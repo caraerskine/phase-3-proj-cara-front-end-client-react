@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const link = {
@@ -8,7 +8,7 @@ const link = {
         margin: '0 6px 6px',
         textDecoration: 'none',
         color: 'white',
-        background: 'pink'
+        background: 'cyan'
 }
 
 const Navigation = () => {
