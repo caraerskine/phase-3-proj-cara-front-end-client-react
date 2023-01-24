@@ -3,6 +3,7 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Artists from './components/Artists';
+import ArtistLink from './components/ArtistLink';
 
 function App() {
   return (
