@@ -4,8 +4,10 @@ const Artists = () => {
 
     const [artists, setArtists] = useState ([])
 
+    const API = "http://localhost:9292/artists/"
+
     useEffect(() => {
-        fetch(`http://localhost:9292/artists`)
+        fetch(API)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -24,4 +26,4 @@ const Artists = () => {
   );
 }
 
-export default Artists
+export default Artists;

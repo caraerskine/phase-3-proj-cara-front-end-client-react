@@ -7,6 +7,7 @@ import Artists from './components/Artists';
 import ArtistLink from './components/ArtistLink';
 import Paintings from './components/Paintings';
 import Painting from './components/Painting';
+// import PaintingForm from './components/PaintingForm';
 
 function App() {
   return (
