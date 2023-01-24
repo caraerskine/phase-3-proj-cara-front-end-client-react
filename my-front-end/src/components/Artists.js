@@ -4,7 +4,7 @@ const Artists = () => {
 
     const [artists, setArtists] = useState ([])
 
-    const API = "http://localhost:9292/artists/"
+    const API = "http://localhost:9292/artists"
 
     useEffect(() => {
         fetch(API)
