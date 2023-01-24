@@ -25,6 +25,7 @@ const Artist = () => {
     }) 
     //do i need dependency array above, the warnings told me to remove it, idk
 
+    //below for when I want to add a painting I think
     const addPainting = (painting) => {
         fetch(`http://localhost:9292/paintings`,{
             method: "POST",
