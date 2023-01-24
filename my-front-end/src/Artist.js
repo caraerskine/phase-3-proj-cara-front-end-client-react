@@ -8,7 +8,7 @@ const Artist = () => {
         paintings:[]
     }]
 
-    const [paintingFormFlag, setPaintingFormFlag] = useState(false)  
+    // const [paintingFormFlag, setPaintingFormFlag] = useState(false)  
     // will use to for form pop-up to add Painting
 
     const params = useParams()
@@ -28,8 +28,8 @@ const Artist = () => {
     const addPainting = (painting) => {
         fetch(`http://localhost:9292/paintings`,{
             method: "POST",
-            header: {
-
+            headers: {
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 name: painting.name,
