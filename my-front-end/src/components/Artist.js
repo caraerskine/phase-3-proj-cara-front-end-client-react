@@ -14,7 +14,7 @@ const Artist = () => {
     const params = useParams()
  
 
-    //reach into URL and find route it camein on and parse out the params 
+    //reach into URL and find route it and parse out the params 
     useEffect(() => {
         fetch(`http://localhost:9292/artists/${params.id}`)
         .then(res => res.json())
@@ -22,12 +22,12 @@ const Artist = () => {
             console.log(data)
             setArtist(data)
         })
-    }) 
+    }, []) 
     //do i need dependency array above, the warnings told me to remove it, idk
 
     //below for when I want to add a painting I think
     const addPainting = (painting) => {
-        fetch(`http://localhost:9292/paintings`,{
+        fetch(`http://localhost:9292/paintings`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -38,7 +38,6 @@ const Artist = () => {
             })
         })
     }
-
 
     const artists = artist.paintings.map(p => <Painting key={p.id} painting={p} />)
 

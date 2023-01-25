@@ -8,27 +8,30 @@ const link = {
         margin: '0 6px 6px',
         textDecoration: 'none',
         color: 'white',
-        background: 'cyan'
+        background: 'pink'
 }
 
 const Navigation = () => {
     return (
         <div>
             <NavLink
-                to="/"
-                exact
-                style={link}
-                activestyle={{
-                    background: 'cyan'
-                }}
-            >Home</NavLink>
+                to="/" style={({ isActive }) => ({ 
+                color: isActive ? 'greenyellow' : 'white' })}>
+                Home</NavLink>
+            
+                {/* // to="/"
+                // exact
+                // style={link}
+                // activeStyle={{ */}
+                {/* //     background: 'blue'
+                // }} */}
 
           <NavLink
                 to="/artists"
                 exact
                 style={link}
-                activestyle={{
-                    background: 'cyan'
+                activeStyle={{
+                    background: 'blue'
                 }}
             >Artists</NavLink>
 
@@ -36,8 +39,8 @@ const Navigation = () => {
                 to="/paintings"
                 exact
                 style={link}
-                activestyle={{
-                    background: 'cyan'
+                activeStyle={{
+                    background: 'blue'
                 }}
             >Paintings</NavLink>        
         </div>
