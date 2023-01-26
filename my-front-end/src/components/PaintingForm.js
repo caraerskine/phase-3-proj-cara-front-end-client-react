@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 
-// const PaintingForm = () => {
+// PaintingForm () {
 //   const [name, setName] = useState ("")
 
 //   return (

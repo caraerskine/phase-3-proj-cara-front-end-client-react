@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Home = () => {
+function Home () {
     return (
         <div>
-            <h1>My Artists and their Paintings Application</h1>
-            <hr/>
-            <p> This application allows a person to view artists and their paintings.</p>
+            <br></br>
+            <br></br>
+            <h1>🎨 Artist's Library 🎨</h1>
+            {/* <hr/> */}
+                <p> This application allows a person to view artists and their paintings.</p>
+                <p>You can also add an artist and add and delete paintings from an artist.</p>
+                <p>Click on a route to get started!</p>
         </div>
     )
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ArtistLink from './components/ArtistLink'
+import ArtistLink from './ArtistLink'
 
 //list of artists that are clickable links so that you can see individual ones
 
-const Artists = () => {
+function Artists () {
 
     const [artists, setArtists] = useState ([])
 

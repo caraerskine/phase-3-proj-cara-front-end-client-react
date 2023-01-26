@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 //Link is for a-tags to click an artist
 //links to the specific route 
 
-const ArtistLink = ( {artist} ) => {
+function ArtistLink ( {artist} ) {
   return (
     <div>
         <Link to={`/artists/${artist.id}`}>

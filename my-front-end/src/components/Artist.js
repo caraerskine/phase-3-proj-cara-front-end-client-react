@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import Painting from '../components/Painting';
+import Painting from './Painting';
 
-const Artist = () => {
+function Artist () {
 
     const [artist, setArtist] = useState[{
         paintings:[]
@@ -13,7 +13,6 @@ const Artist = () => {
 
     const params = useParams()
  
-
     //reach into URL and find route it and parse out the params 
     useEffect(() => {
         fetch(`http://localhost:9292/artists/${params.id}`)
@@ -26,18 +25,18 @@ const Artist = () => {
     //do i need dependency array above, the warnings told me to remove it, idk
 
     //below for when I want to add a painting I think
-    const addPainting = (painting) => {
-        fetch(`http://localhost:9292/paintings`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: painting.name,
-                artist_id: params.id
-            })
-        })
-    }
+    // const addPainting = (painting) => {
+    //     fetch(`http://localhost:9292/paintings`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             name: painting.name,
+    //             artist_id: params.id
+    //         })
+    //     })
+    // }
 
     const artists = artist.paintings.map(p => <Painting key={p.id} painting={p} />)
 

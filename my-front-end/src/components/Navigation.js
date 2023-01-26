@@ -7,39 +7,33 @@ const link = {
         padding: '12px',
         margin: '0 6px 6px',
         textDecoration: 'none',
-        color: 'white',
-        background: 'pink'
+        color: 'black',
+        background: 'lime'
 }
 
-const Navigation = () => {
+function Navigation () {
     return (
         <div>
             <NavLink
-                to="/" style={({ isActive }) => ({ 
-                color: isActive ? 'greenyellow' : 'white' })}>
-                Home</NavLink>
+            to="/"
+            style={link}
+            activestyle={{
+                background: 'blue'
+            }}                
+            >Home</NavLink>
             
-                {/* // to="/"
-                // exact
-                // style={link}
-                // activeStyle={{ */}
-                {/* //     background: 'blue'
-                // }} */}
-
           <NavLink
                 to="/artists"
-                exact
                 style={link}
-                activeStyle={{
+                activestyle={{
                     background: 'blue'
                 }}
             >Artists</NavLink>
 
            <NavLink
                 to="/paintings"
-                exact
                 style={link}
-                activeStyle={{
+                activestyle={{
                     background: 'blue'
                 }}
             >Paintings</NavLink>        

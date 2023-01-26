@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Painting = ( {painting} ) => {
+function Painting ( {painting} ) {
   return (
     <div>
         <h3>{painting.name}</h3>
