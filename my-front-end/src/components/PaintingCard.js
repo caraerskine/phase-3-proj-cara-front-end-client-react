@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router';
 import { Card, CardContent, CardMedia, CardActions } from '@mui/material';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Artists from './Artists';
-import Artist from './Artist';
+// import Artists from './Artists';
+// import Artist from './Artist';
 // import Artist from './Artist';
 
 
@@ -42,7 +42,7 @@ function PaintingCard ( {painting} ) {
             <CardActions>
                 <Button onClick={() => navigate()} size="small">Remove a Painting 🗑️</Button> 
 
-                <Button onClick={() => navigate()} size="small">Edit 📝 </Button>
+                <Button onClick={() => navigate()} size="small">Edit 📝</Button>
           
                 <Button onClick={Liker} size="small">Like this painting 💛</Button> <p>{count}</p>
             </CardActions>

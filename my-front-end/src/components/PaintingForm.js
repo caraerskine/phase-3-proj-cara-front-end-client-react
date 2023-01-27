@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-//put this in App I am not sure if that is correct
-
-
 
 function PaintingForm ( {onAddPainting} ) {
   
@@ -17,13 +14,12 @@ function PaintingForm ( {onAddPainting} ) {
       medium: "",  
       year: "",
       img_link: "",
-      artist_id: id,  //says it is not defined, I am unsure what that means in this context
+      artist_id: id,  
       famous: false
     }
   ); 
 
   console.log(paintingFormData)
-
 
 
   const handleChange = (event) => {
@@ -34,7 +30,6 @@ function PaintingForm ( {onAddPainting} ) {
     }))
   
     console.log(paintingFormData.id)
-  
   }
 
   const handleSubmit = (event) => {
@@ -48,7 +43,6 @@ function PaintingForm ( {onAddPainting} ) {
     }) .then(response => response.json())
        .then(data => {console.log(data)
        })
-
        .then(() => setPaintingFormData({
         title: "",
         medium: "",  
@@ -104,10 +98,7 @@ function PaintingForm ( {onAddPainting} ) {
           </select>
           <br></br>
           <button type="submit">Submit</button>
-          
-
         </form>
-
     </div>
   )
 }

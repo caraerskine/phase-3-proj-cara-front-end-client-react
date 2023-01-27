@@ -8,7 +8,7 @@ import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
-import PaintingCard from './components/PaintingCard';
+// import PaintingCard from './components/PaintingCard';
 // import ArtistCard from './components/ArtistCard';
 // import Painting from './components/Painting';
 // import PaintingLink from './components/PaintingLink';
