@@ -8,8 +8,8 @@ import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import Painting from './components/Painting';
-import PaintingLink from './components/PaintingLink';
-// import PaintingForm from './components/PaintingForm';
+// import PaintingLink from './components/PaintingLink';
+import PaintingForm from './components/PaintingForm';
 
 function App() {
 
@@ -32,6 +32,7 @@ function App() {
       <Navigation />
         <div className="App">
           <Routes>
+
             <Route path="/" element={<Home />} />
             
             <Route path="/artists" element={<Artists artists = {artists} />} /> 
@@ -39,6 +40,8 @@ function App() {
             <Route path="/artists/:id" element={<Artist />} /> 
 
             <Route path="/paintings" element={<Paintings />} /> 
+
+            <Route path="artists/:id/add-painting" element={<PaintingForm />} />
 
            
           </Routes>

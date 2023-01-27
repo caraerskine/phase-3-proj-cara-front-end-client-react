@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 // links to the specific route 
 
 function PaintingLink ( {painting} ) {
+
+  
+
   return (
     <div>
         <h1>Check out this art</h1>
