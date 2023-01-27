@@ -21,17 +21,31 @@ function App() {
 
   const [paintings, setPaintings] = useState ([])
 
-  //this was in App on my old form from ph2, passed down to the form, not sure the relationship here idk
+  const API = 'http://localhost:9292'
+
+  useEffect(() => {
+      fetch(`${API}/paintings`)
+      .then(res => res.json())
+      .then(data => {
+          // console.log(data)
+          setPaintings(data)
+      })    
+  }, [])
+
+  //when i mount the artist, use effect makes the GET reqest to the back end,
+    //gets all the artists, sticks them in state, the second they're in state
+    //react "reacts" to it and map through it and make an artist link out of each one
+    //stick it in a new array and render it on the page
+
+        //upon mount grab the artists and set in state
 
   function onAddPainting(data) {
     setPaintings((currentPaintings) => [...currentPaintings, data])      
   }
 
 
-  const API = 'http://localhost:9292/artists'
-
     useEffect(() => {
-        fetch(API)
+        fetch(`${API}/artists`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -52,7 +66,7 @@ function App() {
 
             <Route path="/artists/:id" element={<Artist />} /> 
 
-            <Route path="/paintings" element={<Paintings artists={artists}/>} /> 
+            <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/>} /> 
 
             <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
