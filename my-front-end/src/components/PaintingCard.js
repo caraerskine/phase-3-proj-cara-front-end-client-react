@@ -44,7 +44,7 @@ function PaintingCard ( {painting} ) {
 
                 <Button onClick={() => navigate()} size="small">Edit 📝 </Button>
           
-                <Button onClick={Liker} size="small">Like this painting 💛</Button> <h2>{count}</h2>
+                <Button onClick={Liker} size="small">Like this painting 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>
    
