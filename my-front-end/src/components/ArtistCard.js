@@ -8,9 +8,9 @@ import Typography from '@mui/material/Typography';
 function ArtistCard ( {artist} ) {
     return (
 
-            <Card sx={{ maxWidth: 350 }}>
+            <Card sx={{ maxWidth: 500 }}>
               <CardMedia
-                sx={{ height: 350 }}
+                sx={{ height: 500 }}
                 image={artist.img_link}
                 title="artist portrait"
               />
@@ -25,6 +25,7 @@ function ArtistCard ( {artist} ) {
               <CardActions>
                 <Button size="small">Add A Painting ➕</Button>
                 <Button size="small">Remove a Painting 🗑️</Button>
+                <Button size="small">See All Paintings by this artist 🖼️</Button>
               </CardActions>
             </Card>
       );
