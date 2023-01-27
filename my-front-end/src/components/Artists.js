@@ -1,27 +1,17 @@
-import React, { useEffect, useState } from "react";
-import ArtistLink from './ArtistLink'
+import ArtistCard from './ArtistCard'
 
 //list of artists that are clickable links so that you can see individual ones
 
-function Artists () {
-
-    const [artists, setArtists] = useState ([])
-
+function Artists ( {artists} ) {
+    
     //formFlag state was here prior as well
 
-    const API = 'http://localhost:9292/artists'
-
-    useEffect(() => {
-        fetch(API)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setArtists(data)
-        })    
-    }, [])
+  
     //upon mount grab the artists and set in state
 
-    const artistsList = artists.map(artist => <ArtistLink key={artist.id} artist={artist} />)
+    console.log(artists)
+
+    const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} />)
     //This is the single artist link that would show up
 
     //when i mount the artist, use effect makes the GET reqest to the back end,
@@ -30,10 +20,8 @@ function Artists () {
     //stick it in a new array and render it on the page
 
     return (
-        <div className="App" >
-            <>
-                {artistsList}
-            </>
+        <div className="artists">
+            {artistsList}
         </div>
   );
 }

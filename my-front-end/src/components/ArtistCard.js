@@ -1,42 +1,38 @@
-// import React from 'react'
-// import Box from '@mui/material/Box';
-// import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
-// import CardContent from '@mui/material/CardContent';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
-// import Artist from './Artist';
-// import Artists from './Artists';
+import React from 'react'
+import { Card, CardContent, CardMedia, CardActions } from '@mui/material';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-// const ArtistCard = ( {artist} ) => {
-//     return (
-//         <Card sx={{ minWidth: 275 }}>
-//           <CardContent>
-//             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-//               Artist
-//             </Typography>
-//             <Typography variant="h5" component="div">
-//               {artist.first_name}, {artist.last_name}
-//             </Typography>
-//             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-//               {artist.famous}
-//             </Typography>
-//             <Typography variant="body2">
-//               well meaning and kindly.
-//               <br />
-//               {""}
-//             </Typography>
-//           </CardContent>
-//           <CardActions>
-//             <Button size="small">See Paintings By This Artist</Button>
-//           </CardActions>
-//         </Card>
-//       );
+
+function ArtistCard ( {artist} ) {
+    return (
+
+            <Card sx={{ maxWidth: 350 }}>
+              <CardMedia
+                sx={{ height: 350 }}
+                image={artist.img_link}
+                title="artist portrait"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {artist.first_name} {artist.last_name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {artist.famous}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Add A Painting ➕</Button>
+                <Button size="small">Remove a Painting 🗑️</Button>
+              </CardActions>
+            </Card>
+      );
     
-// }
+}
 
 
-// export default ArtistCard;
+export default ArtistCard;
 
 
 

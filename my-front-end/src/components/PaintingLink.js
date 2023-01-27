@@ -9,9 +9,11 @@ import { Link } from 'react-router-dom';
 function PaintingLink ( {painting} ) {
   return (
     <div>
+        <h1>Check out this art</h1>
         <Link to={`/paintings/${painting.id}`}>
 
             <h3>{painting.name}</h3>    
+            
 
         </Link>
     </div>

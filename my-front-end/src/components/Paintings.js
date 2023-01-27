@@ -15,7 +15,7 @@ function Paintings () {
         fetch(API)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             setPaintings(data)
         })    
     }, [])
@@ -23,6 +23,8 @@ function Paintings () {
 
     const paintingsList = paintings.map(painting => <PaintingLink key={painting.id} painting={painting} />)
     //This is the single artist link that would show up
+   // I do not see any links hmmm
+
 
     //when i mount the artist, use effect makes the GET reqest to the back end,
     //gets all the artists, sticks them in state, the second they're in state

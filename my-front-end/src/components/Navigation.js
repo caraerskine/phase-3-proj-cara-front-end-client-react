@@ -17,25 +17,19 @@ function Navigation () {
             <NavLink
             to="/"
             style={link}
-            activestyle={{
-                background: 'blue'
-            }}                
+            activestyle={{background: 'blue'}}                
             >Home</NavLink>
             
           <NavLink
                 to="/artists"
                 style={link}
-                activestyle={{
-                    background: 'blue'
-                }}
+                activestyle={{background: 'blue'}}
             >Artists</NavLink>
 
            <NavLink
                 to="/paintings"
                 style={link}
-                activestyle={{
-                    background: 'blue'
-                }}
+                activestyle={{background: 'blue'}}
             >Paintings</NavLink>        
         </div>
 
