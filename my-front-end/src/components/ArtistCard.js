@@ -13,6 +13,7 @@ function ArtistCard ( {artist} ) {
     return (
             <Card sx={{ maxWidth: 500 }}>
               <CardMedia
+                component="div"
                 sx={{ height: 500 }}
                 image={artist.img_link}
                 title="artist portrait"
@@ -21,13 +22,12 @@ function ArtistCard ( {artist} ) {
                 <Typography gutterBottom variant="h5" component="div">
                   {artist.first_name} {artist.last_name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                {/* <Typography variant="body2" color="text.secondary">
                   {artist.famous}
-                </Typography>
+                </Typography> */}
               </CardContent>
               <CardActions>
                 <Button onClick={() => navigate(`${artist.id}/add-painting`)} size="small">Add A Painting ➕</Button>
-          
                 <Button size="small">See All Paintings by this artist 🖼️</Button>
               </CardActions>
             </Card>

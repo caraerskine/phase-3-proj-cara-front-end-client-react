@@ -3,7 +3,7 @@ import PaintingCard from './PaintingCard'
 
 //list of artists that are clickable links so that you can see individual ones
 
-function Paintings () {
+function Paintings ( {artist} ) {
 
     const [paintings, setPaintings] = useState ([])
 
@@ -21,7 +21,7 @@ function Paintings () {
     }, [])
     //upon mount grab the artists and set in state
 
-    const paintingsList = paintings.map(painting => <PaintingCard key={painting.id} painting={painting} />)
+    const paintingsList = paintings.map(painting => <PaintingCard key={painting.id} painting={painting} artist={artist}/>)
     //This is the single artist link that would show up
    // I do not see any links hmmm
 

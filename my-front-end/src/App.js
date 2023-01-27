@@ -8,6 +8,8 @@ import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
+import PaintingCard from './components/PaintingCard';
+// import ArtistCard from './components/ArtistCard';
 // import Painting from './components/Painting';
 // import PaintingLink from './components/PaintingLink';
 
@@ -46,15 +48,16 @@ function App() {
 
             <Route path="/" element={<Home />} />
             
-            <Route path="/artists" element={<Artists artists = {artists} />} /> 
+            <Route path="/artists" element={<Artists artists={artists} />} /> 
 
             <Route path="/artists/:id" element={<Artist />} /> 
 
-            <Route path="/paintings" element={<Paintings />} /> 
+            <Route path="/paintings" element={<Paintings artists={artists}/>} /> 
 
             <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
-           
+            {/* <Route path="" element={<PaintingCard />} /> */}
+
           </Routes>
         </div>
     </Router>
