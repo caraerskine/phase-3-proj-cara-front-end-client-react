@@ -8,8 +8,7 @@ import Typography from '@mui/material/Typography';
 const PaintingCard = ({painting}) => {
 
     
-
-    const navigate = useNavigate()
+ const navigate = useNavigate()
   
     return (
         // <div>PaintingCard</div>
@@ -17,7 +16,7 @@ const PaintingCard = ({painting}) => {
         <CardMedia
         sx={{ height: 500 }}
         image={painting.img_link}
-        title="artist portrait"
+        title="artist painting"
         />
         <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -28,8 +27,8 @@ const PaintingCard = ({painting}) => {
         </Typography>
         </CardContent>
         <CardActions>
-        <Button>Delete this painting</Button>
-        <Button>Update this painting</Button>
+       <Button size="small">Remove a Painting 🗑️</Button> 
+        <Button>Update this painting 📝 </Button>
         </CardActions>
     </Card>
 
