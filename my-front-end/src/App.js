@@ -6,7 +6,6 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Artist from './components/Artist';
 import Artists from './components/Artists';
-// import ArtistLink from './components/ArtistLink';
 import Paintings from './components/Paintings';
 import Painting from './components/Painting';
 import PaintingLink from './components/PaintingLink';
