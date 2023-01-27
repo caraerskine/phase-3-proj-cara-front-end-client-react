@@ -11,7 +11,6 @@ function ArtistCard ( {artist} ) {
  const navigate = useNavigate()
 
     return (
-
             <Card sx={{ maxWidth: 500 }}>
               <CardMedia
                 sx={{ height: 500 }}

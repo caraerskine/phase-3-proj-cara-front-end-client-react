@@ -7,13 +7,24 @@ import Home from './components/Home';
 import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
-import Painting from './components/Painting';
-// import PaintingLink from './components/PaintingLink';
 import PaintingForm from './components/PaintingForm';
+// import Painting from './components/Painting';
+// import PaintingLink from './components/PaintingLink';
+
+
 
 function App() {
 
   const [artists, setArtists] = useState ([])
+
+  const [paintings, setPaintings] = useState ([])
+
+  //this was in App on my old form from ph2, passed down to the form, not sure the relationship here idk
+
+  function onAddPainting(data) {
+    setPaintings((currentPaintings) => [...currentPaintings, data])      
+  }
+
 
   const API = 'http://localhost:9292/artists'
 
@@ -26,7 +37,7 @@ function App() {
         })    
     }, [])
 
-
+  
   return (
     <Router>
       <Navigation />
@@ -41,7 +52,7 @@ function App() {
 
             <Route path="/paintings" element={<Paintings />} /> 
 
-            <Route path="artists/:id/add-painting" element={<PaintingForm />} />
+            <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
            
           </Routes>
