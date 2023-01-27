@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PaintingLink from './PaintingLink'
+import PaintingCard from './PaintingCard'
 
 //list of artists that are clickable links so that you can see individual ones
 
@@ -21,7 +21,7 @@ function Paintings () {
     }, [])
     //upon mount grab the artists and set in state
 
-    const paintingsList = paintings.map(painting => <PaintingLink key={painting.id} painting={painting} />)
+    const paintingsList = paintings.map(painting => <PaintingCard key={painting.id} painting={painting} />)
     //This is the single artist link that would show up
    // I do not see any links hmmm
 
