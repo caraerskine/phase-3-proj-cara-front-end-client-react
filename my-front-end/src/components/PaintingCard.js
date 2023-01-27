@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useNavigate } from 'react-router';
 import { Card, CardContent, CardMedia, CardActions } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -15,8 +15,13 @@ function PaintingCard ( {painting} ) {
 
     const navigate = useNavigate()
  
-    // const artists = artists.forEach(artist => {artist.first_name})
+    // const artists = artists.forEach(artist => {artist.first_name}) //thinking here
 
+    const [count, setCount] = useState(0);
+
+    function Liker() {
+        setCount(prevCount => prevCount +1)
+    }
 
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -35,9 +40,11 @@ function PaintingCard ( {painting} ) {
                 </Typography> */}
             </CardContent>
             <CardActions>
-                <Button onClick={() => navigate()}  size="small">Remove a Painting 🗑️</Button> 
-                <Button>Edit 📝 </Button>
-                <Button>Like this painting 💛</Button>
+                <Button onClick={() => navigate()} size="small">Remove a Painting 🗑️</Button> 
+
+                <Button onClick={() => navigate()} size="small">Edit 📝 </Button>
+          
+                <Button onClick={Liker} size="small">Like this painting 💛</Button> <h2>{count}</h2>
             </CardActions>
         </Card>
    
