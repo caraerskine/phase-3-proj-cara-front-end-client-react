@@ -8,9 +8,6 @@ function Artist () {
         paintings:[]
     }]
 
-    // const [paintingFormFlag, setPaintingFormFlag] = useState(false)  
-    // will use to for form pop-up to add Painting
-
     const params = useParams()
  
     //reach into URL and find route it and parse out the params 

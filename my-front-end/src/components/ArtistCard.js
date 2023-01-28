@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 
 function ArtistCard ( {artist} ) {
 
+  const {first_name, last_name} = artist
+  console.log(artist)
 
  const navigate = useNavigate()
 
@@ -20,11 +22,10 @@ function ArtistCard ( {artist} ) {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {artist.first_name} {artist.last_name}
+                  {first_name} {last_name}   
                 </Typography>
-                {/* <Typography variant="body2" color="text.secondary">
-                  {artist.famous}
-                </Typography> */}
+                <Typography variant="body2" color="text.secondary">
+                </Typography>
               </CardContent>
               <CardActions>
                 <Button onClick={() => navigate(`${artist.id}/add-painting`)} size="small">Add A Painting ➕</Button>

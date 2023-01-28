@@ -15,9 +15,9 @@ function Navigation () {
     return (
         <div>
             <NavLink
-            to="/"
-            style={link}
-            activestyle={{background: 'blue'}}                
+                to="/"
+                style={link}
+                activestyle={{background: 'blue'}}                
             >Home</NavLink>
             
           <NavLink

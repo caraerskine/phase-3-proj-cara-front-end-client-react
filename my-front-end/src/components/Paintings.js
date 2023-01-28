@@ -1,6 +1,6 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import Artists from "./Artists";
 import PaintingCard from './PaintingCard';
 import Painting from './Painting'
 
@@ -12,37 +12,39 @@ import Painting from './Painting'
 
 //use Params is a hook that returns an object of key/value pairs of the 
 //dynamic params of the url matched by the <Route>. Child routes
-//inherit all params from their parents routes.
+//inherit all params from their parent routes.
 
-function Paintings ( {paintings} ) {
+function Paintings ( {paintings, artists} ) {
 
     const params = useParams()
     console.log(params)
 
-    const paintingsList = paintings.map(painting => <PaintingCard key={painting.id} painting={painting}/>)
+    // const paintingsList = paintings.filter(painting => <PaintingCard key={painting.id} painting={painting} />)
+    //all the paintings on a card for each one
+       
+   
+//     const [painting, setPainting] = useState([])
 
-        // function Filter(params) {
-        //     artists.find(artist.id = params).paintings
-         
+  useEffect(() => {
+    if (!paintings) return 
+}, [paintings]) 
 
-            // const paintingsToList = params ? filter(params.id) : paintings
-           // filter artists to find the artist from params
-
-        //     listPaintings = paintingsToList.map(painting => <Painting paintings={paintings}/>)
+    function filter(params) {
+       paintings = artists.find(artist => artist.id = params.id).paintings
+    }
+        const paintingsToList = params ? filter(params.id) : paintings
      
-        //     return (
-        //         <div>
-        //             {listPaintings}
-        //         </div>
-        //     );
-        // }
+        const listPaintings = paintingsToList.map(painting => <PaintingCard key={painting.id} painting={painting}/>)
+        //send one individual artist's paintings on a card for each one
+
 
     return (
         <div className="App" >
-            {paintingsList}
+            {listPaintings}  
         </div>
-  );
-}
+    );
+  }
+
 
 export default Paintings;
 

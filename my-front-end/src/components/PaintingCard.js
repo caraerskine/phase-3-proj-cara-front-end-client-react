@@ -5,9 +5,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
+//need to pass down artist or artists but I get confused on like 22 in Paintings.js
+
 function PaintingCard ( {painting} ) {
 
-    const {img_link, title, medium, year, artist} = painting
+    const {img_link, title, medium, year, artist, id} = painting
     console.log(painting)
 
     const navigate = useNavigate()
@@ -34,7 +36,7 @@ function PaintingCard ( {painting} ) {
                 {medium}, {year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                {artist.first_name} {artist.last_name}
+                {artist.first_name}, {artist.last_name}
                 </Typography>
             </CardContent>
             <CardActions>

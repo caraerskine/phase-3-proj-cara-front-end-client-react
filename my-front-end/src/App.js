@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Navigation from './components/Navigation';
@@ -8,10 +7,8 @@ import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
-// import PaintingCard from './components/PaintingCard';
-// import ArtistCard from './components/ArtistCard';
-// import Painting from './components/Painting';
-// import PaintingLink from './components/PaintingLink';
+import Painting from './components/Painting';
+
 
 
 
@@ -19,20 +16,17 @@ function App() {
 
   const [artists, setArtists] = useState ([])
 
-  const [paintings, setPaintings] = useState ([])
+  const [paintings, setPaintings] = useState (null)
 
   const API = 'http://localhost:9292'
 
   useEffect(() => {
       fetch(`${API}/paintings`)
       .then(res => res.json())
-      .then(data => {
-          // console.log(data)
-          setPaintings(data)
-      })    
+      .then(data => setPaintings(data))    
   }, [])
 
-  //when i mount the artist, use effect makes the GET reqest to the back end,
+  //when i mount the artist, use effect makes the GET request to the back end,
     //gets all the artists, sticks them in state, the second they're in state
     //react "reacts" to it and map through it and make an artist link out of each one
     //stick it in a new array and render it on the page
@@ -53,6 +47,8 @@ function App() {
         })    
     }, [])
 
+    console.log(paintings)
+
   
   return (
     <Router>
@@ -65,8 +61,8 @@ function App() {
             <Route path="/artists" element={<Artists artists={artists} />} /> 
 
             <Route path="/artists/:id" element={<Artist />} /> 
-
-            <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/>} /> 
+             
+            <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
 
             <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
