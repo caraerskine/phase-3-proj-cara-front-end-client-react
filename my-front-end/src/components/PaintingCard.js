@@ -33,8 +33,11 @@ function PaintingCard ( {painting} ) {
               title="painting"
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {title}, {medium}, {year}
+                <Typography gutterBottom variant="h6" component="div">
+                  {title}
+                </Typography>
+                <Typography>
+                {medium}, {year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                 {artist.first_name} {artist.last_name}
