@@ -70,7 +70,7 @@ function App() {
 
             <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
-            {/* <Route path="" element={<PaintingCard />} /> */}
+            <Route path="/paintings/:id" element={<Paintings artists={artists} paintings={paintings}/>} />
 
           </Routes>
         </div>

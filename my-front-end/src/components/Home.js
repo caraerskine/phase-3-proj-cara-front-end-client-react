@@ -7,8 +7,8 @@ function Home () {
             <br></br>
             <h1>🎨 Artist's Library 🎨</h1>
             {/* <hr/> */}
-                <p> This application allows a person to view artists and their paintings.</p>
-                <p>You can also add an artist and add and delete paintings from an artist.</p>
+                <p> This application allows you to have a virtual art collection.</p>
+                <p>You can also add an artist to your collection and add and delete paintings from an artist.</p>
                 <p>Click on a route to get started!</p>
         </div>
     )

@@ -40,11 +40,11 @@ function PaintingCard ( {painting} ) {
                 </Typography> */}
             </CardContent>
             <CardActions>
-                <Button onClick={() => navigate()} size="small">Remove a Painting 🗑️</Button> 
+                <Button onClick={() => navigate()} size="small">Remove 🗑️</Button> 
 
                 <Button onClick={() => navigate()} size="small">Edit 📝</Button>
           
-                <Button onClick={Liker} size="small">Like this painting 💛</Button> <p>{count}</p>
+                <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>
    

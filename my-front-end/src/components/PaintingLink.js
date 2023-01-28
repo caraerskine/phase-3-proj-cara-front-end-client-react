@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // this is the link 
 // Link is for a-tags to click an artist
 // links to the specific route 
+//this can go away when you get the artist card going
 
 function PaintingLink ( {painting} ) {
 

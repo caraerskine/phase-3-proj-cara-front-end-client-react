@@ -28,7 +28,7 @@ function ArtistCard ( {artist} ) {
               </CardContent>
               <CardActions>
                 <Button onClick={() => navigate(`${artist.id}/add-painting`)} size="small">Add A Painting ➕</Button>
-                <Button onClick={() => navigate()} size="small">See All Paintings by this artist 🖼️</Button>
+                <Button onClick={() => navigate(`/paintings/${artist.id}`)} size="small">See All Paintings by this artist 🖼️</Button>
               </CardActions>
             </Card>
       );
