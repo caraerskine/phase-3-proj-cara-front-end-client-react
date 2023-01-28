@@ -3,13 +3,7 @@ import { useNavigate } from 'react-router';
 import { Card, CardContent, CardMedia, CardActions } from '@mui/material';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import Artists from './Artists';
-// import Artist from './Artist';
-// import Artist from './Artist';
 
-
-//tried to pass in prop of 'artist' and it would not work idk y because it is passed down in the hierarchy
-//wanted to include the artist's name on the respective cards hmmmmm
 
 function PaintingCard ( {painting} ) {
 
