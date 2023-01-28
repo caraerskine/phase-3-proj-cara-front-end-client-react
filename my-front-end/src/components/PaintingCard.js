@@ -18,8 +18,6 @@ function PaintingCard ( {painting} ) {
 
     const navigate = useNavigate()
  
-    // const artists = artists.forEach(artist => {artist.first_name}) //thinking here
-
     const [count, setCount] = useState(0);
 
     function Liker() {
