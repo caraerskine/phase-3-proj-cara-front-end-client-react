@@ -13,6 +13,9 @@ import Typography from '@mui/material/Typography';
 
 function PaintingCard ( {painting} ) {
 
+    const {img_link, title, medium, year, artist} = painting
+    console.log(painting)
+
     const navigate = useNavigate()
  
     // const artists = artists.forEach(artist => {artist.first_name}) //thinking here
@@ -28,16 +31,16 @@ function PaintingCard ( {painting} ) {
             <CardMedia
               component="div"
               sx={{ height: 500 }}
-              image={painting.img_link}
+              image={img_link}
               title="painting"
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {painting.title}, {painting.medium}, {painting.year}
+                  {title}, {medium}, {year}
                 </Typography>
-                {/* <Typography variant="body2" color="text.secondary">
-                {painting.famous}
-                </Typography> */}
+                <Typography variant="body2" color="text.secondary">
+                {artist.first_name} {artist.last_name}
+                </Typography>
             </CardContent>
             <CardActions>
                 <Button onClick={() => navigate()} size="small">Remove 🗑️</Button> 

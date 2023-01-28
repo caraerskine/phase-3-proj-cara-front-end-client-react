@@ -14,7 +14,7 @@ import Painting from './Painting'
 //dynamic params of the url matched by the <Route>. Child routes
 //inherit all params from their parents routes.
 
-function Paintings ( {artists, paintings} ) {
+function Paintings ( {paintings} ) {
 
     const params = useParams()
     console.log(params)
