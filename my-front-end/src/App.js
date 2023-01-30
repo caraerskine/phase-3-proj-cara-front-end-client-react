@@ -10,13 +10,11 @@ import PaintingForm from './components/PaintingForm';
 import Painting from './components/Painting';
 
 
-
-
 function App() {
 
   const [artists, setArtists] = useState ([])
 
-  const [paintings, setPaintings] = useState (null)
+  const [paintings, setPaintings] = useState ([])
 
   const API = 'http://localhost:9292'
 
