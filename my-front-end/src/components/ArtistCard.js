@@ -8,7 +8,8 @@ import Typography from '@mui/material/Typography';
 function ArtistCard ( {artist} ) {
 
   const {first_name, last_name} = artist
-  console.log(artist)
+
+  
 
  const navigate = useNavigate()
 

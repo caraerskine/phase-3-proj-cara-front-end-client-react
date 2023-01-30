@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 function PaintingCard ( {painting} ) {
 
     const {img_link, title, medium, year, artist, id} = painting
-    console.log(painting)
+    
 
     const navigate = useNavigate()
  

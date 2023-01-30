@@ -12,6 +12,8 @@ import Painting from './components/Painting';
 
 function App() {
 
+  const [artistId, setArtistId] = useState(1)
+
   const [artists, setArtists] = useState ([])
 
   const [paintings, setPaintings] = useState ([])
@@ -45,7 +47,19 @@ function App() {
         })    
     }, [])
 
-    console.log(paintings)
+   
+    //for individual artist's paintings aka see all paintings by this artist button
+
+    useEffect(() => {
+      fetch(`${API}/artists/${artistId}`)
+      .then(res => res.json())
+      .then(data => {
+          console.log(data)
+      })    
+  }, [])
+
+
+
 
   
   return (
@@ -58,7 +72,7 @@ function App() {
             
             <Route path="/artists" element={<Artists artists={artists} />} /> 
 
-            <Route path="/artists/:id" element={<Artist />} /> 
+            <Route path="/artists/:id" element={<Artist setArtistId={setArtistId}/>} /> 
              
             <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
 
@@ -76,3 +90,6 @@ export default App;
 
 
 /* <Route path="/painting" element={<Painting />} /> */
+
+//button artistId must update artistID state in App.js
+//to display the artist's individual paintings to artist/id 

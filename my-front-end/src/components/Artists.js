@@ -9,7 +9,7 @@ function Artists ( {artists} ) {
   
     //upon mount grab the artists and set in state
 
-    console.log(artists)
+   
 
     const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} />)
     //This is the single artist link that would show up

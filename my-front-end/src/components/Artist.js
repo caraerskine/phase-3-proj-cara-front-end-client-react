@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Painting from './Painting';
 
-function Artist () {
+function Artist ( {}) {
 
     const [artist, setArtist] = useState[{
         paintings:[]
@@ -15,7 +15,7 @@ function Artist () {
         fetch(`http://localhost:9292/artists/${params.id}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+
             setArtist(data)
         })
     }, []) 

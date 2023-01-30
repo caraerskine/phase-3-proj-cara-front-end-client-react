@@ -19,7 +19,7 @@ function PaintingForm ( {onAddPainting} ) {
     }
   ); 
 
-  console.log(paintingFormData)
+
 
 
   const handleChange = (event) => {
@@ -29,7 +29,7 @@ function PaintingForm ( {onAddPainting} ) {
          [id]: value
     }))
   
-    console.log(paintingFormData.id)
+
   }
 
   const handleSubmit = (event) => {
