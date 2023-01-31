@@ -14,24 +14,31 @@ import PaintingCard from './PaintingCard';
 //dynamic params of the url matched by the <Route>. Child routes
 //inherit all params from their parent routes.
 
-function Paintings ( {paintings} ) {
+function Paintings ( {} ) {
 
-    // const params = useParams()
+    const params = useParams()
     // console.log(params)
 
     // const paintingsList = paintings.filter(painting => <PaintingCard key={painting.id} painting={painting} />)
     //all the paintings on a card for each one
        
    
-//     const [painting, setPainting] = useState([])
+    const [paintings, setPaintings] = useState([])
 
-//   useEffect(() => {
-//     if (!paintings) return 
-// }, [paintings]) 
+  useEffect(() => {
+    console.log("id", params.id)
+    fetch(`http://localhost:9292/artists/${params.id}/paintings`)
+    .then(res => res.json())
+    .then(data => {
+    console.log("paintings", data)
+
+    setPaintings(data)
+    })
+}, [params.id]) 
 // console.log(paintings)
 
 const displayPaintings = paintings.map((painting) => 
-    <PaintingCard painting={painting}/>
+    <PaintingCard key={painting.id} painting={painting}/>
 )
 
     // function filter(params) {

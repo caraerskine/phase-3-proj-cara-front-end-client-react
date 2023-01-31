@@ -21,7 +21,8 @@ function App() {
   const API = 'http://localhost:9292'
 
   useEffect(() => {
-      fetch(`${API}/paintings`)
+    console.log("paintings", paintings)
+    fetch(`${API}/paintings`)
       .then(res => res.json())
       .then(data => setPaintings(data))    
   }, [])
