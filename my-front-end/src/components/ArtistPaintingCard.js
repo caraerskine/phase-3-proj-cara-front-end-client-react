@@ -3,7 +3,7 @@ import { Card, CardContent, CardMedia, CardActions } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const ArtistPaintingCard = ( {artistPaintings} ) => {
+const ArtistPaintingCard = ( {artistPaintings, painting} ) => {
 
   const displayArtistPaintings = artistPaintings
 
@@ -12,16 +12,18 @@ const ArtistPaintingCard = ( {artistPaintings} ) => {
       <CardMedia
         component="div"
         sx={{ height: 500 }}
-        // image={artist.img_link}
-        title="artist portrait"
+        image={painting.title}
+        title="artist painting"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {/* {first_name} {last_name} */}
+          {painting.medium} {painting.year}
         </Typography>
         <Typography variant="body2" color="text.secondary"></Typography>
       </CardContent>
-      {/* <CardActions> */}
+      <CardActions>
+        <Button></Button>
+        </CardActions>
     </Card>
   )
 }

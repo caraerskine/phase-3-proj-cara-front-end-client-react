@@ -20,11 +20,12 @@ function App() {
  //the artist along with his or her paintings (done)
 
  //in the new component you must map over artistPaintings to display subsequent data
- //when that button gets clicked you are going to reroute
+ //when that button gets clicked you are going to reroute (done aka displayCard)
 
- //in ArtistPaintings.js we will pass down artistPainting (state) and do a .map 
+ //in ArtistPaintings.js we will pass down artistPaintings (state) and do a .map 
  //to display info to artist painting cards 
- //import artistPaintingCards into artistPaintings
+
+ //import artistPaintingCards into artistPaintings (done)
 
   console.log(artistPaintings)
 
