@@ -7,13 +7,31 @@ import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
-import Painting from './components/Painting';
+import ArtistPaintings from './components/ArtistPaintings';
 
 
 function App() {
 
-  const [artistId, setArtistId] = useState(1)
+  const [artistPaintings, setArtistPaintings] = useState({
+    paintings:[],
+  })
 
+ //artistPaintings will be passed down to a component that will render 
+ //the artist along with his or her paintings (done)
+
+ //in the new component you must map over artistPaintings to display subsequent data
+ //when that button gets clicked you are going to reroute (done aka displayCard)
+
+ //in ArtistPaintings.js we will pass down artistPaintings (state) and do a .map 
+ //to display info to artist painting cards 
+
+ //import artistPaintingCards into artistPaintings (done)
+
+  console.log(artistPaintings)
+
+  const [artistId, setArtistId] = useState(1)
+  // console.log(artistId)
+  
   const [artists, setArtists] = useState ([])
 
   const [paintings, setPaintings] = useState ([])
@@ -43,7 +61,6 @@ function App() {
         fetch(`${API}/artists`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             setArtists(data)
         })    
     }, [])
@@ -55,13 +72,14 @@ function App() {
       fetch(`${API}/artists/${artistId}`)
       .then(res => res.json())
       .then(data => {
-          console.log(data)
+         setArtistPaintings(data)
       })    
-  }, [])
+  }, [artistId])
+
+  
 
 
-
-
+//ViewArtist is new component to display the single artist's ptgs.
   
   return (
     <Router>
@@ -71,9 +89,11 @@ function App() {
 
             <Route path="/" element={<Home />} />
             
-            <Route path="/artists" element={<Artists artists={artists} />} /> 
+            <Route path="/artists" element={<Artists artists={artists} setArtistId={setArtistId} />} /> 
 
-            <Route path="/artists/:id" element={<Artist setArtistId={setArtistId}/>} /> 
+            <Route path="/artists/:id" element={<Artist artists={artists}/>} /> 
+
+            <Route path="/artists/:id" element={<ArtistPaintings artistPaintings={artistPaintings} />} />
              
             <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
 

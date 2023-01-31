@@ -1,8 +1,6 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PaintingCard from './PaintingCard';
-// import Painting from './Painting'
 
 
 //I am trying to get the paintings of individual artists to show up 
@@ -41,18 +39,8 @@ const displayPaintings = paintings.map((painting) =>
     <PaintingCard key={painting.id} painting={painting}/>
 )
 
-    // function filter(params) {
-    //    paintings = artists.find(artist => artist.id = params.id).paintings
-    // }
-    //     const paintingsToList = params ? filter(params.id) : paintings
-     
-    //     const listPaintings = paintingsToList.map(painting => <PaintingCard key={painting.id} painting={painting}/>)
-        //send one individual artist's paintings on a card for each one
-
-
     return (
         <div className="App" >
-            {/* {listPaintings}   */}
             {displayPaintings}
         </div>
     );
