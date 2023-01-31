@@ -4,6 +4,9 @@ import React from 'react';
 
 function Painting ( {painting, paintings} ) {  
 
+//filter info from paintings and id
+//
+
   return (
     <div>
         <br/>

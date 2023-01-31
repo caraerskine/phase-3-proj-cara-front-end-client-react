@@ -10,13 +10,15 @@ function Artist () {
  
     //reach into URL and find route it and parse out the params 
     useEffect(() => {
-        fetch(`http://localhost:9292/artists/${params.id}`)
+        fetch(`http://localhost:9292/artists`)
         .then(res => res.json())
         .then(data => {
-
+          console.log(data)
             setArtist(data)
         })
     }, []) 
+
+ 
     //do i need dependency array above, the warnings told me to remove it, idk?
 
     //below for when I want to add a painting I think
