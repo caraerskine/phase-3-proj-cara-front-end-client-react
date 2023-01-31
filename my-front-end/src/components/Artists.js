@@ -2,7 +2,7 @@ import ArtistCard from './ArtistCard'
 
 //list of artists that are clickable links so that you can see individual ones
 
-function Artists ( {artists} ) {
+function Artists ( {artists, setArtistId, setPaintings} ) {
     
     //formFlag state was here prior as well
 
@@ -11,7 +11,7 @@ function Artists ( {artists} ) {
 
    
 
-    const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} />)
+    const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
     //This is the single artist link that would show up
 
     //when i mount the artist, use effect makes the GET reqest to the back end,

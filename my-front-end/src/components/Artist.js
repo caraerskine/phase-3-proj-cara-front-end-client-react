@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Painting from './Painting';
 
-function Artist ( {}) {
+function Artist () {
 
-    const [artist, setArtist] = useState[{
-        paintings:[]
-    }]
+    const [artist, setArtist] = useState([])
 
     const params = useParams()
  
