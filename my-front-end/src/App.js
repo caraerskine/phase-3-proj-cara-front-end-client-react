@@ -7,7 +7,6 @@ import Artist from './components/Artist';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
-import Painting from './components/Painting';
 import ArtistPaintings from './components/ArtistPaintings';
 
 

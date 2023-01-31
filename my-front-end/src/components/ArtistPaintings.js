@@ -1,20 +1,18 @@
 import React from 'react'
+import ArtistPaintingCard from './ArtistPaintingCard';
 
-const ArtistPaintings = () => {
-  return (
-    <div>ArtistPaintings</div>
-  )
-}
 
+const ArtistPaintings = ( {artistPaintings} ) => {
+ 
+const displayCard = artistPaintings.map((painting, index) => 
+    <ArtistPaintingCard key={index} painting={painting}/>
+)
+
+    return (
+        <div className="App" >
+            {displayCard}
+        </div>
+    );
+  }
 export default ArtistPaintings
 
-// const displayPaintings = paintings.map((painting, index) => 
-//     <PaintingCard key={index} painting={painting}/>
-// )
-
-//     return (
-//         <div className="App" >
-//             {displayPaintings}
-//         </div>
-//     );
-//   }

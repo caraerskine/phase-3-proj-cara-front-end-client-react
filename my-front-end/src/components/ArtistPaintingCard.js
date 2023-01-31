@@ -28,4 +28,3 @@ const ArtistPaintingCard = ( {artistPaintings} ) => {
 
 export default ArtistPaintingCard
 
-//display the paintings
