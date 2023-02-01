@@ -20,12 +20,16 @@ function PaintingForm ( {onAddPainting} ) {
   ); 
 
 
+
+
   const handleChange = (event) => {
     const {id, value} = event.target;
       setPaintingFormData((paintingFormData) => ({
          ...paintingFormData,
          [id]: value
     }))
+  
+
   }
 
   const handleSubmit = (event) => {

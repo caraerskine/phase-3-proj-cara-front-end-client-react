@@ -11,6 +11,7 @@ function PaintingCard ( {painting} ) {
 
     const {img_link, title, medium, year, artist, id} = painting
     
+
     const navigate = useNavigate()
  
     const [count, setCount] = useState(0);
