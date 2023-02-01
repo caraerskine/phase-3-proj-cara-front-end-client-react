@@ -47,8 +47,20 @@ function ArtistCard({ artist, setArtistId }) {
         >
           Add A Painting ➕
         </Button>
-        {/* <Button onClick={() => navigate(`/artists/${artist.id}`)} size="small">See All Paintings by this artist 🖼️</Button> */}
-        <Button onClick={() => viewArtistPaintings(artist.id)} size="small">See All Paintings by this artist 🖼️</Button>
+
+        <Button 
+          onClick={() => navigate(`/artists/${artist.id}/paintings`)} 
+          size="small"
+        >
+          See All Paintings by this artist 🖼️
+        </Button>
+        
+        {/* <Button 
+          onClick={() => viewArtistPaintings(artist.id)} 
+          size="small"
+        >
+          See All Paintings by this artist 🖼️
+        </Button> */}
       </CardActions>
     </Card>
   );

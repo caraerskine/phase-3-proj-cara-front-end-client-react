@@ -16,7 +16,8 @@ function App() {
     paintings:[],
   })
 
-  const [paintings, setPaintings] = useState ([])
+ //artistPaintings will be passed down to a component that will render 
+ //the artist along with his or her paintings (done)
 
  //in the new component you must map over artistPaintings to display subsequent data
  //when that button gets clicked you are going to reroute (done aka displayCard)
@@ -26,36 +27,22 @@ function App() {
 
  //import artistPaintingCards into artistPaintings (done)
 
-  console.log(artistPaintings)
+  const [artists, setArtists] = useState ([])
 
   const [artistId, setArtistId] = useState(1)
   // console.log(artistId)
+  
+  const [artists, setArtists] = useState ([])
 
-
-  console.log(artistPaintings)
+  const [paintings, setPaintings] = useState ([])
 
   const API = 'http://localhost:9292'
 
-
   useEffect(() => {
-    fetch(`${API}/artists`)
-    .then(res => res.json())
-    .then(data => {
-        setArtists(data)
-    })    
-}, [])
-//this use effect and fetch above is setting the artists
-
-
-  useEffect(() => {
-    fetch(`${API}/paintings`)
-    .then(res => res.json())
-    .then(data => setPaintings(data))    
+      fetch(`${API}/paintings`)
+      .then(res => res.json())
+      .then(data => setPaintings(data))    
   }, [])
-  
-  
-
-  
 
   //when i mount the artist, use effect makes the GET request to the back end,
     //gets all the artists, sticks them in state, the second they're in state
@@ -64,8 +51,20 @@ function App() {
 
         //upon mount grab the artists and set in state
 
+  function onAddPainting(data) {
+    setPaintings((currentPaintings) => [...currentPaintings, data])      
+  }
 
-    
+
+    useEffect(() => {
+        fetch(`${API}/artists`)
+        .then(res => res.json())
+        .then(data => {
+            setArtists(data)
+        })    
+    }, [])
+
+   
     //for individual artist's paintings aka see all paintings by this artist button
 //duplicate from params in Artist.js
   //   useEffect(() => {
@@ -75,6 +74,8 @@ function App() {
   //        setArtistPaintings(data)
   //     })    
   // }, [artistId])
+
+  
 
 
 //ViewArtist is new component to display the single artist's ptgs.
@@ -87,17 +88,17 @@ function App() {
 
             <Route path="/" element={<Home />} />
             
-            <Route path="/artists" element={<Artists />} /> 
+            <Route path="/artists" element={<Artists artists={artists} setArtistId={setArtistId} />} /> 
 
-            <Route path="/artists/:id" element={<Artist />} /> 
+            <Route path="/artists/:id" element={<Artist artists={artists}/>} /> 
 
             <Route path="/artists/:id" element={<ArtistPaintings artistPaintings={artistPaintings} />} />
              
-            <Route path="/paintings" element={<Paintings /> } /> 
+            <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
 
             <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
-            <Route path="/paintings/:id" element={<Paintings />} />
+            <Route path="/paintings/:id" element={<Paintings artists={artists} paintings={paintings}/>} />
 
           </Routes>
         </div>

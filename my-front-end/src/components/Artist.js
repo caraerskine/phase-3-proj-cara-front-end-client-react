@@ -35,16 +35,16 @@ function Artist () {
     //     })
     // }
 
-    const paintings = artist.paintings.map(p => <Painting key={p.id} painting={p} />)
+    const artists = artist.paintings.map(p => <Painting key={p.id} painting={p} />)
 
   return (
     <div>
         <br/>
-        <h2>{paintings.name}</h2>
+        <h2>{artist.name}</h2>
         <hr/>
-        <h3>Paintings:</h3>
+        <h3>Artists:</h3>
         <br/>
-        {paintings}
+        {artists}
         <br/>
     </div>
   )
