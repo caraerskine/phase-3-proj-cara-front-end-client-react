@@ -1,15 +1,15 @@
 import ArtistCard from './ArtistCard'
+import { useState, useEffect } from 'react';
 
-//list of artists that are clickable links so that you can see individual ones
 
-function Artists ( {artists, setArtistId, setPaintings} ) {
+function Artists () {
     
-    //formFlag state was here prior as well
 
+  
   
     //upon mount grab the artists and set in state
 
-   
+
 
     const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
     //This is the single artist link that would show up

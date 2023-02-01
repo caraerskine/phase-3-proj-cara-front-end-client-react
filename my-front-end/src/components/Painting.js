@@ -1,8 +1,10 @@
 import React from 'react';
+import { useState, useEffect} from 'react';
 
 
+function Painting () {  
 
-function Painting ( {painting, paintings} ) {  
+  
 
 //filter info from paintings and id
 //

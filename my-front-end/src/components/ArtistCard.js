@@ -36,12 +36,14 @@ function ArtistCard({ artist, setArtistId }) {
         >
           Add A Painting ➕
         </Button>
+
         <Button 
-          onClick={() => navigate(`${artist.id}`)} 
+          onClick={() => navigate(`/artists/${artist.id}/paintings`)} 
           size="small"
         >
           See All Paintings by this artist 🖼️
         </Button>
+        
         {/* <Button 
           onClick={() => viewArtistPaintings(artist.id)} 
           size="small"
