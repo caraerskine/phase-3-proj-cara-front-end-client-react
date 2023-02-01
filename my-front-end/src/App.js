@@ -23,6 +23,7 @@ function App() {
   const [artistId, setArtistId] = useState(1)
   // console.log(artistId)
 
+  //seem to be missing "onAddPainting" idk where it went
 
   console.log(artistPaintings)
 
@@ -47,7 +48,6 @@ function App() {
   
   
 
-  
 
   //when i mount the artist, use effect makes the GET request to the back end,
     //gets all the artists, sticks them in state, the second they're in state
