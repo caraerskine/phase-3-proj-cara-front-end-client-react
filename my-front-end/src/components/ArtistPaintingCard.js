@@ -5,6 +5,8 @@ import Typography from "@mui/material/Typography";
 
 const ArtistPaintingCard = ( {artistPaintings} ) => {
 
+//what Maika and i made for the cards just for the individual artists paintings
+
   const displayArtistPaintings = artistPaintings
 
   return (

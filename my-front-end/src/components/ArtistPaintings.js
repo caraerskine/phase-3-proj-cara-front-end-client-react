@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import PaintingCard from './PaintingCard';
+import ArtistPaintingCard from './ArtistPaintingCard';
 
 
 function ArtistPaintings () {
+
+//Maika and I made this to deal with displaying each artists two (or more) paintings
 
 // console.log(paintings)
 
@@ -17,7 +19,7 @@ const API = 'http://localhost:9292'
 
 const artistId = parseInt(params.id)
 
-//in office hours Madeline had me make the use Params = paintingId but I lost it *thinking*
+//in office hours Madeline had me make the use Params = paintingId but I changed it to artistId
 
 useEffect(() => {
     fetch(`${API}/artists/${artistId}/paintings`)
@@ -34,7 +36,7 @@ useEffect(() => {
 
 
 const displayPaintings = artistPaintings.map((painting, index) => 
-    <PaintingCard key={index} painting={painting}/>
+    <ArtistPaintingCard key={index} painting={painting}/>
 )
 
     return (

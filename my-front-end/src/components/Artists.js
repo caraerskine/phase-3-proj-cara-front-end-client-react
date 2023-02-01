@@ -5,9 +5,9 @@ import ArtistCard from './ArtistCard'
 function Artists ( {artists, setArtistId, setPaintings} ) {
     
    
-
-    const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
-    //This is the single artist link that would show up
+ const artistsList = artists.map(artist => 
+ <ArtistCard key={artist.id} artist={artist} setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
+   
 
     //when i mount the artist, use effect makes the GET reqest to the back end,
     //gets all the artists, sticks them in state, the second they're in state

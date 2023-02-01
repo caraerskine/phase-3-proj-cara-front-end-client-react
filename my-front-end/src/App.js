@@ -11,9 +11,9 @@ import ArtistPaintings from './components/ArtistPaintings';
 
 function App() {
 
-  const [artistPaintings, setArtistPaintings] = useState({
-    paintings:[],
-  })
+  // const [artistPaintings, setArtistPaintings] = useState({
+  //   paintings:[],
+  // })
 
  //artistPaintings will be passed down to a component that will render 
  //the artist along with his or her paintings (done)
