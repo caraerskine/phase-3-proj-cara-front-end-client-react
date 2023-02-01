@@ -42,7 +42,7 @@ function PaintingCard ( {painting} ) {
             <CardActions>
                 <Button onClick={() => navigate()} size="small">Remove 🗑️</Button> 
 
-                <Button onClick={() => navigate()} size="small">Edit 📝</Button>
+                {/* <Button onClick={() => navigate()} size="small">Edit 📝</Button> */}
           
                 <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
@@ -57,5 +57,6 @@ export default PaintingCard;
 
 //additionally, you could update the paintings in case the info was wrong PATCH
 //be able to delete a painting DELETE
+//Liker can be UPDATE/Patch
 
 //need a URL path for it in the back end for PATCH and DELETE

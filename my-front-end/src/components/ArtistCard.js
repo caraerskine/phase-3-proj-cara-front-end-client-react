@@ -9,7 +9,7 @@ function ArtistCard({ artist, setArtistId }) {
 
   const { first_name, last_name } = artist;
 
-  const API = "http://localhost:9292";
+  // const API = "http://localhost:9292";
 
   // const onClick = function () {
   //   fetch(`${API}/artists/:id`)
@@ -22,9 +22,9 @@ function ArtistCard({ artist, setArtistId }) {
 
   const navigate = useNavigate();
 
-  function viewArtistPaintings(paint) {
-      setArtistId(paint)
-  }
+  // function viewArtistPaintings(paint) {
+  //     setArtistId(paint)
+  // }
 
   return (
     <Card sx={{ maxWidth: 500 }}>
@@ -49,17 +49,17 @@ function ArtistCard({ artist, setArtistId }) {
         </Button>
 
         <Button 
-          onClick={() => navigate(`${artist.id}`)} 
+          onClick={() => navigate(`${artist.id}/paintings`)} 
           size="small"
         >
           See All Paintings by this artist 🖼️
         </Button>
-        <Button 
+        {/* <Button 
           onClick={() => viewArtistPaintings(artist.id)} 
           size="small"
         >
           See All Paintings by this artist 🖼️
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );
