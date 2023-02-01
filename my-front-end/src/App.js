@@ -18,7 +18,15 @@ function App() {
 
   const [paintings, setPaintings] = useState ([])
 
-  const [artists, setArtists] = useState ([])
+ //in the new component you must map over artistPaintings to display subsequent data
+ //when that button gets clicked you are going to reroute (done aka displayCard)
+
+ //in ArtistPaintings.js we will pass down artistPaintings (state) and do a .map 
+ //to display info to artist painting cards 
+
+ //import artistPaintingCards into artistPaintings (done)
+
+  console.log(artistPaintings)
 
   const [artistId, setArtistId] = useState(1)
   // console.log(artistId)
