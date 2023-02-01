@@ -66,14 +66,14 @@ function App() {
 
    
     //for individual artist's paintings aka see all paintings by this artist button
-//duplicate from params in Artist.js
-  //   useEffect(() => {
-  //     fetch(`${API}/artists/${artistId}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //        setArtistPaintings(data)
-  //     })    
-  // }, [artistId])
+
+    useEffect(() => {
+      fetch(`${API}/artists/${artistId}`)
+      .then(res => res.json())
+      .then(data => {
+         setArtistPaintings(data)
+      })    
+  }, [artistId])
 
   
 
