@@ -54,7 +54,7 @@ function ArtistCard({ artist, setArtistId }) {
         >
           See All Paintings by this artist 🖼️
         </Button>
-        {/* <Button 
+        <Button 
           onClick={() => viewArtistPaintings(artist.id)} 
           size="small"
         >

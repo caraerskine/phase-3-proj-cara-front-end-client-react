@@ -4,11 +4,6 @@ import ArtistCard from './ArtistCard'
 
 function Artists ( {artists, setArtistId, setPaintings} ) {
     
-    //formFlag state was here prior as well
-
-  
-    //upon mount grab the artists and set in state
-
    
 
     const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)

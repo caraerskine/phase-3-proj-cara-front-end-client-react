@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Painting from './Painting';
 
-function Artist () {
+function Artist ( {paintings}) {
 
     const [artist, setArtist] = useState([])
 
@@ -10,7 +10,7 @@ function Artist () {
  
     //reach into URL and find route it and parse out the params 
     useEffect(() => {
-        fetch(`http://localhost:9292/artists/${params.id}`)
+        fetch(`http://localhost:9292/artists/${params.id}/paintings`)
         .then(res => res.json())
         .then(data => {
 

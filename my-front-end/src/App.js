@@ -31,8 +31,6 @@ function App() {
 
   const [artistId, setArtistId] = useState(1)
   // console.log(artistId)
-  
-  const [artists, setArtists] = useState ([])
 
   const [paintings, setPaintings] = useState ([])
 
@@ -90,7 +88,7 @@ function App() {
             
             <Route path="/artists" element={<Artists artists={artists} setArtistId={setArtistId} />} /> 
 
-            <Route path="/artists/:id" element={<Artist artists={artists}/>} /> 
+            <Route path="/artists/:id" element={<Artist artists={artists} paintings={paintings} />} /> 
 
             <Route path="/artists/:id" element={<ArtistPaintings artistPaintings={artistPaintings} />} />
              
