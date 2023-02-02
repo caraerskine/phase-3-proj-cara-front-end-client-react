@@ -11,14 +11,14 @@ return (
   component="div"
   sx={{ height: 500 }}
   image={painting.img_link}
-  title="the painting"
+  title="painting"
 />
 <CardContent>
   <Typography gutterBottom variant="h6" component="div">
-    <h2>{painting.title}</h2>
+    <h3>{painting.title}</h3>
     </Typography>
     <Typography>
-    {painting.medium}, {painting.year}
+    <h4>{painting.medium}, {painting.year}</h4>
   </Typography>
   <Typography variant="body2" color="text.secondary">
   </Typography>
