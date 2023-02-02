@@ -13,6 +13,7 @@ function PaintingForm ( {onAddPainting} ) {
       title: "",
       medium: "",  
       year: "",
+      // like: 0,
       img_link: "",
       artist_id: id,  
       famous: false
@@ -47,6 +48,7 @@ function PaintingForm ( {onAddPainting} ) {
         title: "",
         medium: "",  
         year: "",
+        // like: 0,
         img_link: "",
         artist_id: id,  
         famous: false
@@ -79,6 +81,13 @@ function PaintingForm ( {onAddPainting} ) {
           id="year"
           onChange={handleChange}
           />
+          {/* <label htmlFor="year">year</label>
+           <input 
+          type="text" 
+          value={paintingFormData.year} 
+          id="like"
+          onChange={handleChange}
+          /> */}
           <br></br>
           <label htmlFor="img_link">image</label>
           <input 

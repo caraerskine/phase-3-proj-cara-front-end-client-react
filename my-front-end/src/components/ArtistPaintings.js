@@ -4,40 +4,43 @@ import { useParams } from 'react-router-dom';
 import ArtistPaintingCard from './ArtistPaintingCard';
 
 
-function ArtistPaintings () {
+function ArtistPaintings ( {artists}) {
 
 //Maika and I made this to deal with displaying each artists two (or more) paintings
 
 // console.log(paintings)
 
-const params = useParams()
-
 const [artistPaintings, setArtistPaintings] = useState([])
+
+ //or ?
+// const [artistPaintings, setArtistPaintings] = useState([])
 // console.log(artistPaintings)
 
-const API = 'http://localhost:9292'
+ const params = useParams()
 
-const artistId = parseInt(params.id)
+// const API = 'http://localhost:9292'
+//
+
+
 
 //in office hours Madeline had me make the parseInt(params.id) = paintingId but I changed it to artistId
 
 useEffect(() => {
-    fetch(`${API}/artists/${artistId}/paintings`)
-    .then(res => res.json())
-    .then(data => {
-        setArtistPaintings(data)
-        console.log(data)
-    })
-}, [params.id])
+    const artistId = parseInt(params.artist_id)
+    const artist = artists.find(a => a.id == artistId)
+    setArtistPaintings(artist.paintings)
+}, [])
 
 // function filterPaintings(params){
 //     return artists.find(artists => artists.id === parseInt(params.id, 10)).paintings
 // }
 
 
-const displayPaintings = artistPaintings.map((painting, index) => 
-    <ArtistPaintingCard key={index} painting={painting}/>
+const displayPaintings = artistPaintings.map((painting) => 
+    <ArtistPaintingCard key={painting.id} painting={painting}/>
 )
+
+//was mapping over artistPaintings
 
     return (
         <div className="App" >

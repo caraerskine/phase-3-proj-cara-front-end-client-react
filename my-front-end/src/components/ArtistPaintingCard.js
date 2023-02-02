@@ -3,30 +3,33 @@ import { Card, CardContent, CardMedia, CardActions } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const ArtistPaintingCard = ( {artistPaintings} ) => {
+function ArtistPaintingCard ( {painting} ) {
 
-//what Maika and i made for the cards just for the individual artists paintings
+return (
+<Card sx={{ maxWidth: 500 }}>
+<CardMedia
+  component="div"
+  sx={{ height: 500 }}
+  image={painting.img_link}
+  title="the painting"
+/>
+<CardContent>
+  <Typography gutterBottom variant="h6" component="div">
+    <h2>{painting.title}</h2>
+    </Typography>
+    <Typography>
+    {painting.medium}, {painting.year}
+  </Typography>
+  <Typography variant="body2" color="text.secondary">
+  </Typography>
+</CardContent>
+<CardActions> 
+</CardActions>
+</Card> 
 
-  const displayArtistPaintings = artistPaintings
-
-  return (
-    <Card sx={{ maxWidth: 500 }}>
-      <CardMedia
-        component="div"
-        sx={{ height: 500 }}
-        // image={artist.img_link}
-        title="artist portrait"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {/* {first_name} {last_name} */}
-        </Typography>
-        <Typography variant="body2" color="text.secondary"></Typography>
-      </CardContent>
-      {/* <CardActions> */}
-    </Card>
-  )
+)
 }
 
 export default ArtistPaintingCard
+
 

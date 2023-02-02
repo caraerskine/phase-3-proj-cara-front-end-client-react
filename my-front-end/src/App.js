@@ -12,9 +12,7 @@ import Tester from './components/Tester';
 
 function App() {
 
-  // const [artistPaintings, setArtistPaintings] = useState({
-  //   paintings:[],
-  // })
+ 
 
   const [artists, setArtists] = useState ([])
 
@@ -68,11 +66,11 @@ function App() {
             
             <Route path="/artists" element={<Artists artists={artists} setArtistId={setArtistId} />} /> 
 
-            <Route path="/artists/:id/paintings" element={<ArtistPaintings  />} />
+            <Route path="/artists/:artist_id/paintings" element={<ArtistPaintings artists={artists}  />} />
              
             <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
 
-            <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
+            <Route path="/artists/:artist_id/paintings/new" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
             <Route path="/paintings/:id" element={<Tester />} />
 
