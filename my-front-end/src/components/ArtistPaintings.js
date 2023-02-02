@@ -19,7 +19,7 @@ const API = 'http://localhost:9292'
 
 const artistId = parseInt(params.id)
 
-//in office hours Madeline had me make the use Params = paintingId but I changed it to artistId
+//in office hours Madeline had me make the parseInt(params.id) = paintingId but I changed it to artistId
 
 useEffect(() => {
     fetch(`${API}/artists/${artistId}/paintings`)

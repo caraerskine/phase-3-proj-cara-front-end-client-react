@@ -7,20 +7,42 @@ import Typography from '@mui/material/Typography';
 
 //button to Remove does not return an error but does not necessarily work yet idk
 
-function PaintingCard ( {painting} ) {
+function PaintingCard ( {painting, paintings, setPaintings} ) {
 
     const {img_link, title, medium, year, artist, id} = painting
     
-
     const navigate = useNavigate()
  
+
+    //for LIKER
     const [count, setCount] = useState(0);
 
     function Liker() {
         setCount(prevCount => prevCount +1)
     }
 
-    console.log(count)
+    //persist "like" in back end NOT THE CASE YET
+    //Have not activated the bacj end params listening
+
+
+
+    //for DELETE
+    // function handleDelete(deletePainting) {
+    //     const deleted = paintings.filter((painting) => painting.id !== deletePainting)
+    //     setPaintings(deleted)
+    // }
+
+    // console.log(handleDelete)
+
+    // fetch(`http://localhost:9292/${painting.id}/paintings`, {
+    //     method: "DELETE",
+    //     headers: {
+    //       "Content-Type" : "application/json"
+    //     }
+    //   });
+
+
+    // console.log(count)
 
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -42,10 +64,9 @@ function PaintingCard ( {painting} ) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={() => navigate(`/paintings/${artist.id}`)} size="small">Remove 🗑️</Button> 
+                {/* <Button onClick={() => } size="small">Remove 🗑️</Button>  */}
 
-                {/* <Button onClick={() => navigate()} size="small">Edit 📝</Button> */}
-          
+
                 <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>
@@ -57,8 +78,17 @@ function PaintingCard ( {painting} ) {
 export default PaintingCard;
 
 
+//navigate(`/paintings/${artist.id}`)
+
+//handleDelete(painting.id)
+
+//how to fit into the onClick function on line 61 because of use Navigate
+//
+
 //additionally, you could update the paintings in case the info was wrong PATCH
 //be able to delete a painting DELETE
 //Liker can be UPDATE/Patch
 
 //need a URL path for it in the back end for PATCH and DELETE
+
+//       {/* <Button onClick={() => navigate()} size="small">Edit 📝</Button> */}

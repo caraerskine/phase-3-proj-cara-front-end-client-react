@@ -16,17 +16,6 @@ function App() {
   //   paintings:[],
   // })
 
- //artistPaintings will be passed down to a component that will render 
- //the artist along with his or her paintings (done)
-
- //in the new component you must map over artistPaintings to display subsequent data
- //when that button gets clicked you are going to reroute (done aka displayCard)
-
- //in ArtistPaintings.js we will pass down artistPaintings (state) and do a .map 
- //to display info to artist painting cards 
-
- //import artistPaintingCards into artistPaintings (done)
-
   const [artists, setArtists] = useState ([])
 
   const [artistId, setArtistId] = useState(1)
@@ -47,7 +36,6 @@ function App() {
 }, [])
 
 
-
   //when i mount the artist, use effect makes the GET request to the back end,
     //gets all the artists, sticks them in state, the second they're in state
     //react "reacts" to it and map through it and make an artist link out of each one
@@ -58,7 +46,7 @@ function App() {
   function onAddPainting(data) {
     setPaintings((currentPaintings) => [...currentPaintings, data])      
   }
-
+//for form
 
     useEffect(() => {
         fetch(`${API}/artists`)
@@ -67,7 +55,7 @@ function App() {
             setArtists(data)
         })    
     }, [])
-
+//loads all the artists
   
   
   return (

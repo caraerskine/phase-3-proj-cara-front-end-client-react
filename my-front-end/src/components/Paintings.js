@@ -2,11 +2,11 @@ import React from 'react';
 import PaintingCard from './PaintingCard';
 
 
-function Paintings ( {paintings} ) {
+function Paintings ( {paintings, setPaintings} ) {
 
 
 const displayPaintings = paintings.map((painting, index) => 
-    <PaintingCard key={index} painting={painting}/>
+    <PaintingCard key={index} painting={painting} setPaintings={setPaintings}/>
 )
 
     return (
