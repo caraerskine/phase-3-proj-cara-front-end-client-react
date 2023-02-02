@@ -65,8 +65,6 @@ function PaintingCard ( {painting, paintings, setPaintings} ) {
             </CardContent>
             <CardActions>
                 {/* <Button onClick={() => } size="small">Remove 🗑️</Button>  */}
-
-
                 <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>
