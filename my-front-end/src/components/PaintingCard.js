@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-//need to pass down artist or artists but I get confused on like 22 in Paintings.js
+//button to Remove does not return an error but does not necessarily work yet idk
 
 function PaintingCard ( {painting} ) {
 
@@ -19,6 +19,8 @@ function PaintingCard ( {painting} ) {
     function Liker() {
         setCount(prevCount => prevCount +1)
     }
+
+    console.log(count)
 
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -36,11 +38,11 @@ function PaintingCard ( {painting} ) {
                 {medium}, {year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                {artist.first_name}, {artist.last_name}
+                {artist.first_name} {artist.last_name}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={() => navigate()} size="small">Remove 🗑️</Button> 
+                <Button onClick={() => navigate(`/paintings/${artist.id}`)} size="small">Remove 🗑️</Button> 
 
                 {/* <Button onClick={() => navigate()} size="small">Edit 📝</Button> */}
           

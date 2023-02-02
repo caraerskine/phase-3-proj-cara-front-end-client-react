@@ -7,6 +7,7 @@ import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
 import ArtistPaintings from './components/ArtistPaintings';
+import Tester from './components/Tester';
 
 
 function App() {
@@ -84,6 +85,8 @@ function App() {
             <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
 
             <Route path="artists/:id/add-painting" element={<PaintingForm onAddPainting={onAddPainting} />} />
+
+            <Route path="/paintings/:id" element={<Tester />} />
 
           </Routes>
         </div>
