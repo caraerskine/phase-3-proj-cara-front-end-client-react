@@ -26,21 +26,21 @@ function PaintingCard ( {painting, paintings, setPaintings} ) {
 
     // for the DELETE trash can remove
     function handleDelete(deletePainting) {
+        fetch(`http://localhost:9292/paintings/${painting.id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type" : "application/json"
+            }
+          });
+    
         const deleted = paintings.filter((painting) => painting.id !== deletePainting)
         setPaintings(deleted)
+        // setArtists(find it and delete it)
     }
 
     console.log(handleDelete)
 
-    fetch(`http://localhost:9292/paintings/${painting.id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type" : "application/json"
-        }
-      });
-
-
-
+   
 
     return (
         <Card sx={{ maxWidth: 500 }}>
