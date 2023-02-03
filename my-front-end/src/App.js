@@ -33,6 +33,7 @@ function App() {
     })  
 }, [])
 
+// console.log(artists)
 
   //when i mount the artist, use effect makes the GET request to the back end,
     //gets all the artists, sticks them in state, the second they're in state
@@ -50,6 +51,7 @@ function App() {
         fetch(`${API}/artists`)
         .then(res => res.json())
         .then(data => {
+          // console.log(data)
             setArtists(data)
         })    
     }, [])

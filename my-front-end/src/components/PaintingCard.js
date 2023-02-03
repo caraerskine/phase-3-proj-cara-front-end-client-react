@@ -20,29 +20,27 @@ function PaintingCard ( {painting, paintings, setPaintings} ) {
     function Liker() {
         setCount(prevCount => prevCount +1)
     }
-
     //persist "like" in back end NOT THE CASE YET
-    //Have not activated the bacj end params listening
+    //Have not activated the backend params listening
+
+
+    // for the DELETE trash can remove
+    function handleDelete(deletePainting) {
+        const deleted = paintings.filter((painting) => painting.id !== deletePainting)
+        setPaintings(deleted)
+    }
+
+    console.log(handleDelete)
+
+    fetch(`http://localhost:9292/paintings/${painting.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type" : "application/json"
+        }
+      });
 
 
 
-    //for DELETE
-    // function handleDelete(deletePainting) {
-    //     const deleted = paintings.filter((painting) => painting.id !== deletePainting)
-    //     setPaintings(deleted)
-    // }
-
-    // console.log(handleDelete)
-
-    // fetch(`http://localhost:9292/${painting.id}/paintings`, {
-    //     method: "DELETE",
-    //     headers: {
-    //       "Content-Type" : "application/json"
-    //     }
-    //   });
-
-
-    // console.log(count)
 
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -64,7 +62,7 @@ function PaintingCard ( {painting, paintings, setPaintings} ) {
                 </Typography>
             </CardContent>
             <CardActions>
-                {/* <Button onClick={() => } size="small">Remove 🗑️</Button>  */}
+                <Button onClick={handleDelete} size="small">Remove 🗑️</Button> 
                 <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>

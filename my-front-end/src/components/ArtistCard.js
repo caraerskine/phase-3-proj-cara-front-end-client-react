@@ -27,7 +27,7 @@ function ArtistCard( {artist} ) {
       </CardContent>
       <CardActions>
         <Button
-          onClick={() => navigate(`${artist.id}/add-painting`)}
+          onClick={() => navigate(`${artist.id}/paintings/new`)}
           size="small"
         >
           Add A Painting ➕
@@ -45,3 +45,5 @@ function ArtistCard( {artist} ) {
 }
 
 export default ArtistCard;
+
+//change the route for line 30 to match

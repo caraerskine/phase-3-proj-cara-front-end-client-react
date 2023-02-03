@@ -7,18 +7,27 @@ import ArtistPaintingCard from './ArtistPaintingCard';
 function ArtistPaintings ( {artists}) {
 
 
-const [artistPaintings, setArtistPaintings] = useState([])
+// const [artistPaintings, setArtistPaintings] = useState([])
 
 
 const params = useParams()
 
+let artistPaintings = [] 
 
-useEffect(() => {
-    const artistId = parseInt(params.artist_id)
-    const artist = artists.find(a => a.id == artistId)
-    setArtistPaintings(artist.paintings)
-}, [])
+if (artists.length > 0){ 
+  const artistId = parseInt(params.artist_id)
+  const artist = artists.find(a => a.id == artistId)
+  artistPaintings = artist.paintings
+}
 
+// useEffect(() => {
+//   // console.log(artists)
+//     const artistId = parseInt(params.artist_id)
+//     const artist = artists.find(a => a.id == artistId)
+//     setArtistPaintings(artist.paintings)
+    
+// }, [])
+console.log(artists)
 
 const displayPaintings = artistPaintings.map((painting) => 
     <ArtistPaintingCard key={painting.id} painting={painting}/>
@@ -33,4 +42,5 @@ const displayPaintings = artistPaintings.map((painting) =>
 
 
 export default ArtistPaintings;
+
 
