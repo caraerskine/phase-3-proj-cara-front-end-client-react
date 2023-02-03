@@ -15,10 +15,10 @@ return (
 />
 <CardContent>
   <Typography gutterBottom variant="h6" component="div">
-    <h3>{painting.title}</h3>
+    <h2>{painting.title}</h2>
     </Typography>
     <Typography>
-    <h4>{painting.medium}, {painting.year}</h4>
+    <h3>{painting.medium}, {painting.year}</h3>
   </Typography>
   <Typography variant="body2" color="text.secondary">
   </Typography>
