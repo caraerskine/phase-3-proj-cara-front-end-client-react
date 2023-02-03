@@ -6,28 +6,27 @@ import Typography from "@mui/material/Typography";
 function ArtistPaintingCard ( {painting} ) {
 
 return (
-<Card sx={{ maxWidth: 500 }}>
-<CardMedia
-  component="div"
-  sx={{ height: 500 }}
-  image={painting.img_link}
-  title="painting"
-/>
-<CardContent>
-  <Typography gutterBottom variant="h6" component="div">
-    <h2>{painting.title}</h2>
-    </Typography>
-    <Typography>
-    <h3>{painting.medium}, {painting.year}</h3>
-  </Typography>
-  <Typography variant="body2" color="text.secondary">
-  </Typography>
-</CardContent>
-<CardActions> 
-</CardActions>
-</Card> 
-
-)
+  <Card sx={{ maxWidth: 500 }}>
+    <CardMedia
+      component="div"
+      sx={{ height: 500 }}
+      image={painting.img_link}
+      title="painting"
+    />
+    <CardContent>
+      <Typography gutterBottom variant="h6" component="div">
+        <h2>{painting.title}</h2>
+      </Typography>
+      <Typography>
+        <h3>{painting.medium}, {painting.year}</h3>
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+      </Typography>
+    </CardContent>
+    <CardActions> 
+    </CardActions>
+  </Card> 
+  )
 }
 
 export default ArtistPaintingCard

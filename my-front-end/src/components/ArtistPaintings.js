@@ -6,9 +6,8 @@ import ArtistPaintingCard from './ArtistPaintingCard';
 
 function ArtistPaintings ( {artists}) {
 
-
-// const [artistPaintings, setArtistPaintings] = useState([])
-
+//show the paintings for each individual artist
+//const [artistPaintings, setArtistPaintings] = useState([])
 
 const params = useParams()
 

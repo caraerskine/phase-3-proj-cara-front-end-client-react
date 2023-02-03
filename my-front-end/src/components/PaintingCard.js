@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router';
 import { Card, CardContent, CardMedia, CardActions } from '@mui/material';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -7,13 +6,10 @@ import Typography from '@mui/material/Typography';
 
 //button to Remove does not return an error but does not necessarily work yet idk
 
-function PaintingCard ( {painting, paintings, setPaintings} ) {
+function PaintingCard ( {painting, paintings, setPaintings, setArtists} ) {
 
     const {img_link, title, medium, year, artist, id} = painting
     
-    const navigate = useNavigate()
- 
-
     //for LIKER
     const [count, setCount] = useState(0);
 
@@ -35,7 +31,11 @@ function PaintingCard ( {painting, paintings, setPaintings} ) {
     
         const deleted = paintings.filter((painting) => painting.id !== deletePainting)
         setPaintings(deleted)
-        // setArtists(find it and delete it)
+        //setPaintings (find the painting and delete it from all the paintings)   
+
+        const removed = paintings.filter((painting) => painting.id !== deletePainting) 
+        setArtists(removed)
+        // setArtists (find the painting and delete it from artists' paintings)
     }
 
     console.log(handleDelete)
@@ -62,7 +62,7 @@ function PaintingCard ( {painting, paintings, setPaintings} ) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={handleDelete} size="small">Remove 🗑️</Button> 
+                <Button onClick={handleDelete} size="small">Delete ➖</Button> 
                 <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>
