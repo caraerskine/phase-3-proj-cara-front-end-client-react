@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 //button to Remove does not return an error but does not necessarily work yet idk
 
-function PaintingCard ( {painting, paintings, setPaintings, setArtists} ) {
+function PaintingCard ( {painting, paintings, onDelete, setArtists} ) {
 
     const {img_link, title, medium, year, artist, id} = painting
     
@@ -16,31 +16,42 @@ function PaintingCard ( {painting, paintings, setPaintings, setArtists} ) {
     function Liker() {
         setCount(prevCount => prevCount +1)
     }
-    //persist "like" in back end NOT THE CASE YET
-    //Have not activated the backend params listening
-
-
-    // for the DELETE trash can remove
-    function handleDelete(deletePainting) {
+  
+    // for the DELETE a painting
+    function handleDelete(e) {
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
             method: "DELETE",
-            headers: {
-              "Content-Type" : "application/json"
-            }
-          });
-    
-        const deleted = paintings.filter((painting) => painting.id !== deletePainting)
-        setPaintings(deleted)
-        //setPaintings (find the painting and delete it from all the paintings)   
+          })
+            .then(() => onDelete(painting))
+        
+      
+      }
 
-        const removed = paintings.filter((painting) => painting.id !== deletePainting) 
-        setArtists(removed)
-        // setArtists (find the painting and delete it from artists' paintings)
-    }
+    //PATCH here for Liker
+    function handleLiker(){
+        fetch(`http://localhost:9292/paintings/${painting.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({}),
+        })
+          .then((response) => response.json())
+          .then(Liker)
 
-    console.log(handleDelete)
+          //useEffect run when the "count" piece of state is updated
+          //do not run it on initial render pass in count
+          //get reponse
+          //replace old painting obj with new
 
+
+      }
    
+//debating:
+// PUT: update existing resource, 
+//PATCH: make partial update on a resource
+
+
 
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -63,7 +74,7 @@ function PaintingCard ( {painting, paintings, setPaintings, setArtists} ) {
             </CardContent>
             <CardActions>
                 <Button onClick={handleDelete} size="small">Delete ➖</Button> 
-                <Button onClick={Liker} size="small">Like 💛</Button> <p>{count}</p>
+                <Button onClick={handleLiker} size="small">Like 💛</Button> <p>{count}</p>
             </CardActions>
         </Card>
    

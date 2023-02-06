@@ -18,7 +18,7 @@ return (
         <h2>{painting.title}</h2>
       </Typography>
       <Typography>
-        <h3>{painting.medium}, {painting.year}</h3>
+        <>{painting.medium}, {painting.year}</>
       </Typography>
       <Typography variant="body2" color="text.secondary">
       </Typography>

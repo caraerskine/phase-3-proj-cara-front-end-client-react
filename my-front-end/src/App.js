@@ -42,8 +42,31 @@ function App() {
 
         //upon mount grab the artists and set in state
 
+  function onDelete(deletedPainting) {
+          const updatedPaintings = paintings.filter((p) => p.id !== deletedPainting.id)
+          setPaintings(updatedPaintings)
+
+          const updatedArtists = artists.map((a) => {       
+            if (a.id === deletedPainting.artist_id) {
+              return {
+                ...a, 
+                paintings: a.paintings.filter((p) => p.id !== deletedPainting.id)
+              }  
+            }  else {
+              return a 
+            }
+          } )
+            setArtists(updatedArtists)
+
+  }
+
+
+
   function onAddPainting(data) {
-    setPaintings((currentPaintings) => [...currentPaintings, data])      
+    setPaintings((currentPaintings) => [...currentPaintings, data]) 
+    
+
+  //filter  
   }
 //for form
 
@@ -70,11 +93,11 @@ function App() {
 
             <Route path="/artists/:artist_id/paintings" element={<ArtistPaintings artists={artists}  />} />
              
-            <Route path="/paintings" element={<Paintings artists={artists} paintings={paintings}/> } /> 
+            <Route path="/paintings" element={<Paintings onDelete={onDelete} artists={artists} paintings={paintings}/> } /> 
 
             <Route path="/artists/:artist_id/paintings/new" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
-            <Route path="/paintings/:id" element={<Tester />} />
+            {/* <Route path="/paintings/:id" element={<Tester />} /> */}
 
           </Routes>
         </div>
