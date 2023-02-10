@@ -5,8 +5,8 @@ import ArtistCard from './ArtistCard'
 function Artists ( {artists, setArtistId, setPaintings} ) {
     
    
- const artistsList = artists.map(artist => 
- <ArtistCard key={artist.id} artist={artist} setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
+ const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} 
+    setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
    
 
     //when i mount the artist, use effect makes the GET reqest to the back end,

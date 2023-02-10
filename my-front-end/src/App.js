@@ -7,20 +7,15 @@ import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
 import ArtistPaintings from './components/ArtistPaintings';
-import Tester from './components/Tester';
 
 
 function App() {
 
- 
-
   const [artists, setArtists] = useState ([])
 
   const [artistId, setArtistId] = useState(1)
-  // console.log(artistId)
 
   const [paintings, setPaintings] = useState ([])
-
 
   const API = 'http://localhost:9292'
 
@@ -61,20 +56,29 @@ function App() {
   }
 
 
-
   function onAddPainting(data) {
-    setPaintings((currentPaintings) => [...currentPaintings, data]) 
-    
-
-  //filter  
+    setPaintings((currentPaintings) => [...currentPaintings, data])   
   }
-//for form
+
+  function handleLikePainting(updatedPainting) {
+    console.log(updatedPainting)
+    //update the painting obj, replace it
+    const updatedPaintings = paintings.map((p) => {
+      if (p.id === updatedPainting.id) {
+        return updatedPainting
+      } else {
+        return p 
+      } 
+        setPaintings(updatedPaintings)
+    })
+    
+  }
+
 
     useEffect(() => {
         fetch(`${API}/artists`)
         .then(res => res.json())
         .then(data => {
-          // console.log(data)
             setArtists(data)
         })    
     }, [])
@@ -93,11 +97,9 @@ function App() {
 
             <Route path="/artists/:artist_id/paintings" element={<ArtistPaintings artists={artists}  />} />
              
-            <Route path="/paintings" element={<Paintings onDelete={onDelete} artists={artists} paintings={paintings}/> } /> 
+            <Route path="/paintings" element={<Paintings onDelete={onDelete} artists={artists} paintings={paintings} handleLikePainting={handleLikePainting}/> } /> 
 
             <Route path="/artists/:artist_id/paintings/new" element={<PaintingForm onAddPainting={onAddPainting} />} />
-
-            {/* <Route path="/paintings/:id" element={<Tester />} /> */}
 
           </Routes>
         </div>

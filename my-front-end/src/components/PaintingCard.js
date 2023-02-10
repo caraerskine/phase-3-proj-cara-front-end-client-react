@@ -4,54 +4,47 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-//button to Remove does not return an error but does not necessarily work yet idk
+function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
 
-function PaintingCard ( {painting, paintings, onDelete, setArtists} ) {
+    const {img_link, title, medium, year, artist, like} = painting
+    // debugger
+    //state and function for LIKER
+    // const [count, setCount] = useState(0);
 
-    const {img_link, title, medium, year, artist, id} = painting
-    
-    //for LIKER
-    const [count, setCount] = useState(0);
-
-    function Liker() {
-        setCount(prevCount => prevCount +1)
-    }
+    // function Liker() {
+    //     setCount(prevCount => prevCount +1)
+    // }
   
-    // for the DELETE a painting
+    // for DELETE a painting
     function handleDelete(e) {
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
             method: "DELETE",
           })
             .then(() => onDelete(painting))
-        
-      
       }
 
-    //PATCH here for Liker
-    function handleLiker(){
+    //PATCH for Liker
+    function handleLiker(e){
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify({like: painting.like +1}),
         })
           .then((response) => response.json())
-          .then(Liker)
-
-          //useEffect run when the "count" piece of state is updated
-          //do not run it on initial render pass in count
-          //get reponse
-          //replace old painting obj with new
-
-
+          .then((updatedPainting) => {
+            handleLikePainting(updatedPainting)
+          })
+          // have a useEffect run when the "count" piece of state is updated
+          // do not run it on initial render, pass in count
+          // get response
+          // replace old painting obj with new 
+          //update state of artists nested paintings array
       }
-   
-//debating:
-// PUT: update existing resource, 
+  
+// PUT: update existing resource
 //PATCH: make partial update on a resource
-
-
 
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -74,7 +67,7 @@ function PaintingCard ( {painting, paintings, onDelete, setArtists} ) {
             </CardContent>
             <CardActions>
                 <Button onClick={handleDelete} size="small">Delete ➖</Button> 
-                <Button onClick={handleLiker} size="small">Like 💛</Button> <p>{count}</p>
+                <Button onClick={handleLiker} size="small">Like 💛</Button> <p>{like}</p>
             </CardActions>
         </Card>
    
@@ -84,18 +77,3 @@ function PaintingCard ( {painting, paintings, onDelete, setArtists} ) {
 
 export default PaintingCard;
 
-
-//navigate(`/paintings/${artist.id}`)
-
-//handleDelete(painting.id)
-
-//how to fit into the onClick function on line 61 because of use Navigate
-//
-
-//additionally, you could update the paintings in case the info was wrong PATCH
-//be able to delete a painting DELETE
-//Liker can be UPDATE/Patch
-
-//need a URL path for it in the back end for PATCH and DELETE
-
-//       {/* <Button onClick={() => navigate()} size="small">Edit 📝</Button> */}
