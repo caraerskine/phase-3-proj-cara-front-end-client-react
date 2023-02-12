@@ -9,11 +9,8 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
     const {img_link, title, medium, year, artist, like} = painting
     // debugger
     //state and function for LIKER
-    // const [count, setCount] = useState(0);
 
-    // function Liker() {
-    //     setCount(prevCount => prevCount +1)
-    // }
+    const [count, setCount] = useState(1);
   
     // for DELETE a painting
     function handleDelete(e) {
@@ -25,34 +22,32 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
 
     //PATCH for Liker
     function handleLiker(e){
+      e.preventDefault(e)
+
+        setCount(count +1)
+        const updateLike = like + 1
+       
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({like: painting.like +1}),
+          body: JSON.stringify({like: updateLike}),
         })
           .then((response) => response.json())
           .then((updatedPainting) => {
             handleLikePainting(updatedPainting)
           })
-          // have a useEffect run when the "count" piece of state is updated
-          // do not run it on initial render, pass in count
-          // get response
-          // replace old painting obj with new 
-          //update state of artists nested paintings array
       }
-  
-// PUT: update existing resource
-//PATCH: make partial update on a resource
 
+      // {like: painting.like +1} was in stringify ()
     return (
         <Card sx={{ maxWidth: 500 }}>
             <CardMedia
               component="div"
               sx={{ height: 500 }}
               image={img_link}
-              title="painting"
+              title={painting.title}
             />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
@@ -70,8 +65,6 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
                 <Button onClick={handleLiker} size="small">Like 💛</Button> <p>{like}</p>
             </CardActions>
         </Card>
-   
-
    )
 }
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { Card, CardContent, CardMedia, CardActions } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Artists from "./Artists";
 
 function ArtistCard( {artist} ) {
 
@@ -17,7 +18,7 @@ function ArtistCard( {artist} ) {
         component="div"
         sx={{ height: 500 }}
         image={artist.img_link}
-        title="artist portrait"
+        title={artist.first_name + " " + artist.last_name}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

@@ -55,10 +55,10 @@ function App() {
 
   }
 
-
   function onAddPainting(data) {
     setPaintings((currentPaintings) => [...currentPaintings, data])   
   }
+
 
   function handleLikePainting(updatedPainting) {
     console.log(updatedPainting)
@@ -69,10 +69,24 @@ function App() {
       } else {
         return p 
       } 
-        setPaintings(updatedPaintings)
     })
-    
-  }
+
+
+    const updatedArtistPaintings = artists.map((a) => {
+      if (a.paintings.map(painting => painting.id === parseInt(updatedPainting.id))
+       === updatedArtistPaintings.id) {
+        return updatedPainting 
+      } else {
+        return a 
+      }
+    })
+        setArtists(updatedArtistPaintings)
+        setPaintings(updatedPaintings)
+    }
+
+  //state triggers a re-render
+  //i think what i need to update the state of artists is similar to the above
+  //i think i need an handlelike for updated artists too?
 
 
     useEffect(() => {
