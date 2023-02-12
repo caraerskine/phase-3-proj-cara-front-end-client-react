@@ -6,13 +6,12 @@ import Typography from '@mui/material/Typography';
 
 function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
 
-    const {img_link, title, medium, year, artist, like} = painting
+    const {img_link, title, medium, year, like} = painting
     // debugger
-    //state and function for LIKER
+
 
     const [count, setCount] = useState(1);
   
-    // for DELETE a painting
     function handleDelete(e) {
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
             method: "DELETE",
@@ -20,7 +19,6 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
             .then(() => onDelete(painting))
       }
 
-    //PATCH for Liker
     function handleLiker(e){
       e.preventDefault(e)
 
@@ -47,7 +45,7 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
               component="div"
               sx={{ height: 500 }}
               image={img_link}
-              title={painting.title}
+              title={title}
             />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
@@ -57,7 +55,7 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
                 {medium}, {year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                {artist.first_name} {artist.last_name}
+                {} {}
                 </Typography>
             </CardContent>
             <CardActions>

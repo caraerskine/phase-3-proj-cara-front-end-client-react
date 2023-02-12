@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-
 function PaintingForm ( {onAddPainting} ) {
   
   const {id} = useParams()
 
- 
   const [paintingFormData, setPaintingFormData] = useState(
     {
       title: "",
@@ -19,17 +17,12 @@ function PaintingForm ( {onAddPainting} ) {
     }
   ); 
 
-
-
-
   const handleChange = (event) => {
     const {id, value} = event.target;
       setPaintingFormData((paintingFormData) => ({
          ...paintingFormData,
          [id]: value
     }))
-  
-
   }
 
   const handleSubmit = (event) => {

@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
 import PaintingForm from './components/PaintingForm';
+import ArtistForm from './components/ArtistForm';
 import ArtistPaintings from './components/ArtistPaintings';
 
 
@@ -59,6 +60,9 @@ function App() {
     setPaintings((currentPaintings) => [...currentPaintings, data])   
   }
 
+  function onAddArtist(data) {
+    setArtists((currentArtists) => [...currentArtists, data])
+  }
 
   function handleLikePainting(updatedPainting) {
     console.log(updatedPainting)
@@ -85,9 +89,6 @@ function App() {
     }
 
   //state triggers a re-render
-  //i think what i need to update the state of artists is similar to the above
-  //i think i need an handlelike for updated artists too?
-
 
     useEffect(() => {
         fetch(`${API}/artists`)
@@ -111,9 +112,11 @@ function App() {
 
             <Route path="/artists/:artist_id/paintings" element={<ArtistPaintings artists={artists}  />} />
              
-            <Route path="/paintings" element={<Paintings onDelete={onDelete} artists={artists} paintings={paintings} handleLikePainting={handleLikePainting}/> } /> 
+            <Route path="/paintings" element={<Paintings onDelete={onDelete}  paintings={paintings} handleLikePainting={handleLikePainting}/> } /> 
 
             <Route path="/artists/:artist_id/paintings/new" element={<PaintingForm onAddPainting={onAddPainting} />} />
+
+            <Route path="/artists/:artist_id/artists/new" element={<ArtistForm onAddArtist={onAddArtist} />} />
 
           </Routes>
         </div>
@@ -123,4 +126,6 @@ function App() {
 
 export default App;
 
+// had    /artists/:artist_id/artists/new     on line 119 not sure
 
+// artists={artists} was passing this down to Paintings

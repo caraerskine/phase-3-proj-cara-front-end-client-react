@@ -30,7 +30,7 @@ function Navigation () {
                 to="/paintings"
                 style={link}
                 activestyle={{background: 'blue'}}
-            >Paintings</NavLink>        
+            >Paintings</NavLink> 
         </div>
 
     )
