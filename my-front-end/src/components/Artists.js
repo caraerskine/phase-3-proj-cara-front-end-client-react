@@ -2,11 +2,11 @@ import ArtistCard from './ArtistCard'
 
 //list of artists that are clickable links so that you can see individual ones
 
-function Artists ( {artists, setArtistId, setPaintings} ) {
+function Artists ( {artists, setArtistId, setPaintings, handleLikeArtistPaintings} ) {
     
    
  const artistsList = artists.map(artist => <ArtistCard key={artist.id} artist={artist} 
-    setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} />)
+    setArtistId={setArtistId} artists={artists} setPaintings={setPaintings} handleLikeArtistPaintings={handleLikeArtistPaintings} />)
    
 
     //when i mount the artist, use effect makes the GET reqest to the back end,

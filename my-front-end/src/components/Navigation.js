@@ -32,8 +32,11 @@ function Navigation () {
                 activestyle={{background: 'blue'}}
             >Paintings</NavLink> 
         </div>
-
     )
 }
 
 export default Navigation;
+
+//link that sends it TO a route
+//then it goes to app
+//link and nav link send it to a route

@@ -1,16 +1,14 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Artists and their Paintings
 
-## Available Scripts
+This is an app to keep track of artists and their paintings. 
 
-In the project directory, you can run:
+You can see the artists information, the paintings they have made
+currently in the app, and you can even add a new artist and their paintings
+as well as add paintings to an existing artist. You can also delete paintings
+by an artist and update a painting by an artist.
 
-### `npm start`
+This is great for anyone who is starting an art collection or is a fan of art. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Happy art collecting!
 

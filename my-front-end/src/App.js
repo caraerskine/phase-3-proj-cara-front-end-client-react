@@ -56,39 +56,49 @@ function App() {
 
   }
 
-  function onAddPainting(data) {
-    setPaintings((currentPaintings) => [...currentPaintings, data])   
+    function onAddPainting(data) {
+      setPaintings((currentPaintings) => [...currentPaintings, data])   
   }
 
-  function onAddArtist(data) {
-    setArtists((currentArtists) => [...currentArtists, data])
+    function onAddArtist(data) {
+      setArtists((currentArtists) => [...currentArtists, data])
   }
 
-  function handleLikePainting(updatedPainting) {
-    console.log(updatedPainting)
-    //update the painting obj, replace it
-    const updatedPaintings = paintings.map((p) => {
-      if (p.id === updatedPainting.id) {
-        return updatedPainting
-      } else {
-        return p 
-      } 
-    })
+    function handleLikePainting(updatedPainting) {
+      console.log(updatedPainting)
+      //update the painting obj, replace it
+      const updatedPaintings = paintings.map((p) => {
+        if (p.id === updatedPainting.id) {
+          return updatedPainting
+        } else {
+          return p 
+        } 
+     })
+      setPaintings(updatedPaintings)
+  }
+  
+    //do I need this because the "like" is only on the painting card, you can only like a painting
+    // const updatedArtistPaintings = artists.map((a) => {
+    //   if (a.paintings.map(painting => painting.id === parseInt(updatedPainting.id))
+    //    === updatedArtistPaintings.id) {
+    //     return updatedPainting 
+    //   } else {
+    //     return a 
+    //   }
+    // })
+    //     setArtists(updatedArtistPaintings)
+    // }
 
+//fix above find the artist IF you had to update the liker to the artists 
+//grab artists paintings
+//{...,} and [...,] spread operator with arrays and objects
+//if it shows up in the back end and not in the front end then you did not update state
+//replace that one paitnng with updated paintings
+//then find the artis and change his paintnig to the updated one
+//and then get all the artists and update them 
+//painting and update that one artist accept new updated array of paintings
 
-    const updatedArtistPaintings = artists.map((a) => {
-      if (a.paintings.map(painting => painting.id === parseInt(updatedPainting.id))
-       === updatedArtistPaintings.id) {
-        return updatedPainting 
-      } else {
-        return a 
-      }
-    })
-        setArtists(updatedArtistPaintings)
-        setPaintings(updatedPaintings)
-    }
-
-  //state triggers a re-render
+//state triggers a re-render
 
     useEffect(() => {
         fetch(`${API}/artists`)
@@ -110,9 +120,9 @@ function App() {
             
             <Route path="/artists" element={<Artists artists={artists} setArtistId={setArtistId} />} /> 
 
-            <Route path="/artists/:artist_id/paintings" element={<ArtistPaintings artists={artists}  />} />
+            <Route path="/artists/:artist_id/paintings" element={<ArtistPaintings artists={artists} />} />
              
-            <Route path="/paintings" element={<Paintings onDelete={onDelete}  paintings={paintings} handleLikePainting={handleLikePainting}/> } /> 
+            <Route path="/paintings" element={<Paintings onDelete={onDelete} paintings={paintings} handleLikePainting={handleLikePainting}/> } /> 
 
             <Route path="/artists/:artist_id/paintings/new" element={<PaintingForm onAddPainting={onAddPainting} />} />
 

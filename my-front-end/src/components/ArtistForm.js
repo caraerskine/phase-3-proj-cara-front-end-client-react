@@ -22,8 +22,9 @@ function ArtistForm( {onAddArtist} ) {
              ...artistFormData,
              [id]: value
         }))
-      }
 
+        console.log(artistFormData.id)
+      }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -34,8 +35,7 @@ function ArtistForm( {onAddArtist} ) {
         },
         body: JSON.stringify({...artistFormData})
         }) .then(response => response.json())
-           .then(data => {console.log(data)
-           })
+           .then(data => onAddArtist(data))
            .then(() => setArtistFormData({
             first_name: "",
             last_name: "",  
@@ -43,6 +43,8 @@ function ArtistForm( {onAddArtist} ) {
             img_link: "",
             artist_id: id 
            }));
+
+           console.log(onAddArtist)
         }
   
 

@@ -12,10 +12,7 @@ function ArtistCard( {artist} ) {
 
   const navigate = useNavigate();
 
-//button for add new artist
-
-
-
+  
   return (    
     <Card sx={{ maxWidth: 500 }}>
       <CardMedia

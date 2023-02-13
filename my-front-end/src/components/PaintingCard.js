@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
 
-    const {img_link, title, medium, year, like} = painting
+    const {img_link, title, medium, year, like, artist} = painting
     // debugger
 
 
@@ -22,7 +22,7 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
     function handleLiker(e){
       e.preventDefault(e)
 
-        setCount(count +1)
+        setCount(count => count +1)
         const updateLike = like + 1
        
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
@@ -37,7 +37,7 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
             handleLikePainting(updatedPainting)
           })
       }
-
+//
       // {like: painting.like +1} was in stringify ()
     return (
         <Card sx={{ maxWidth: 500 }}>
@@ -55,7 +55,7 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
                 {medium}, {year}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                {} {}
+                  {} {}
                 </Typography>
             </CardContent>
             <CardActions>

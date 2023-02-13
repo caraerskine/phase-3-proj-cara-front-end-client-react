@@ -34,8 +34,7 @@ function PaintingForm ( {onAddPainting} ) {
     },
     body: JSON.stringify({...paintingFormData})
     }) .then(response => response.json())
-       .then(data => {console.log(data)
-       })
+       .then(data => onAddPainting(data))
        .then(() => setPaintingFormData({
         title: "",
         medium: "",  
@@ -44,7 +43,9 @@ function PaintingForm ( {onAddPainting} ) {
         artist_id: id,  
         famous: false
        }));
-    }
+    
+        console.log(onAddPainting)
+      }
 
 
   return (
