@@ -5,24 +5,6 @@ import Typography from "@mui/material/Typography";
 
 function ArtistPaintingCard ( {painting} ) {
 
-  //Do I need this whole new fetch and POST to add the new painting to Artists Paintings?
-//moved this state below to App IDFK
-  // const [artistPtgs, setArtistPtgs] = useState([]);
-
-  // function handleUpdate(e) {
-  //   e.preventDefault(e)
-  //     fetch(`http://localhost:9292/artists/${painting.id}/paintings`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       },
-
-  //   })
-  // }
-
-
-
-
 return (
   <Card sx={{ maxWidth: 500 }}>
     <CardMedia

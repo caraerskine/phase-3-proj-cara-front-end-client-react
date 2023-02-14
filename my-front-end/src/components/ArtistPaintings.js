@@ -15,8 +15,6 @@ function ArtistPaintings ( {artists} ) {
     artistPaintings = artist.paintings
   }
 
-// console.log(artists)
-
   const displayPaintings = artistPaintings.map((painting) => 
       <ArtistPaintingCard key={painting.id} painting={painting} artists={artists}/>
   )

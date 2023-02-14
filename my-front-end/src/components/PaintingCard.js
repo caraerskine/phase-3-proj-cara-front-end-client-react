@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
 
     const {img_link, title, medium, year, like, artist} = painting
-    // debugger
 
     const [count, setCount] = useState(1);
   
