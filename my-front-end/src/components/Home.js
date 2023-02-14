@@ -5,7 +5,7 @@ function Home () {
         <div>
             <br></br>
             <br></br>
-            <h1>🎨 Vitrual Art Collection 🎨</h1>
+            <h1>🎨 Virtual Art Collection 🎨</h1>
             {/* <hr/> */}
                 <p>This application allows you to have a virtual art collection for free.</p>
                 <p>You can see all the artists and their paintings in this collection.</p> 
