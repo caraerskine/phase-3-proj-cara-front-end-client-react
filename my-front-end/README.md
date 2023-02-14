@@ -11,13 +11,13 @@ and add paintings to any of the artists. You can like a painting, and delete one
 
 Goals achieved:
 
-READ 
--Display data of artists
--Display data of paintings 
-
 CREATE
 -Allow users to create a new artist
 -Allow users to add a new painting to any artist
+
+READ 
+-Display data of artists
+-Display data of paintings 
 
 UPDATE
 -Allow users to “like” a painting
