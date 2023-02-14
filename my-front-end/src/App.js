@@ -12,6 +12,8 @@ import ArtistPaintings from './components/ArtistPaintings';
 
 function App() {
 
+  //state triggers a re-render
+
   const [artists, setArtists] = useState ([])
 
   const [artistId, setArtistId] = useState(1)
@@ -29,12 +31,23 @@ function App() {
     })  
 }, [])
 
+
+  useEffect(() => {
+    fetch(`${API}/artists`)
+    .then(res => res.json())
+    .then(data => {
+      setArtists(data)
+    })    
+}, [])
+
 // console.log(artists)
 
   //when i mount the artist, use effect makes the GET request to the back end,
     //gets all the artists, sticks them in state, the second they're in state
     //react "reacts" to it and map through it and make an artist link out of each one
     //stick it in a new array and render it on the page
+
+    //i need to update state to reflect what is shown in /artists/:id/paintings
 
         //upon mount grab the artists and set in state
 
@@ -56,8 +69,19 @@ function App() {
 
   }
 
-    function onAddPainting(data) {
-      setPaintings((currentPaintings) => [...currentPaintings, data])   
+    function onAddPainting(newPainting) {
+      setPaintings((currentPaintings) => [...currentPaintings, newPainting])
+        const updatedArtistPaintings = artists.map((a) => {
+          if (a.id === newPainting.artist_id){
+            return {
+              ...a, 
+              paintings: [...a.paintings, newPainting]
+            }
+          } else {
+            return a
+          }
+        })
+      setArtists(updatedArtistPaintings)  
   }
 
     function onAddArtist(data) {
@@ -66,7 +90,6 @@ function App() {
 
     function handleLikePainting(updatedPainting) {
       console.log(updatedPainting)
-      //update the painting obj, replace it
       const updatedPaintings = paintings.map((p) => {
         if (p.id === updatedPainting.id) {
           return updatedPainting
@@ -76,39 +99,6 @@ function App() {
      })
       setPaintings(updatedPaintings)
   }
-  
-    //do I need this because the "like" is only on the painting card, you can only like a painting
-    // const updatedArtistPaintings = artists.map((a) => {
-    //   if (a.paintings.map(painting => painting.id === parseInt(updatedPainting.id))
-    //    === updatedArtistPaintings.id) {
-    //     return updatedPainting 
-    //   } else {
-    //     return a 
-    //   }
-    // })
-    //     setArtists(updatedArtistPaintings)
-    // }
-
-//fix above find the artist IF you had to update the liker to the artists 
-//grab artists paintings
-//{...,} and [...,] spread operator with arrays and objects
-//if it shows up in the back end and not in the front end then you did not update state
-//replace that one paitnng with updated paintings
-//then find the artis and change his paintnig to the updated one
-//and then get all the artists and update them 
-//painting and update that one artist accept new updated array of paintings
-
-//state triggers a re-render
-
-    useEffect(() => {
-        fetch(`${API}/artists`)
-        .then(res => res.json())
-        .then(data => {
-            setArtists(data)
-        })    
-    }, [])
-//loads all the artists
-  
   
   return (
     <Router>
@@ -136,6 +126,3 @@ function App() {
 
 export default App;
 
-// had    /artists/:artist_id/artists/new     on line 119 not sure
-
-// artists={artists} was passing this down to Paintings

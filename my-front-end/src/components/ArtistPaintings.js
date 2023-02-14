@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ArtistPaintingCard from './ArtistPaintingCard';
 
 
-function ArtistPaintings ( {artists}) {
+function ArtistPaintings ( {artists} ) {
 
   const params = useParams()
 

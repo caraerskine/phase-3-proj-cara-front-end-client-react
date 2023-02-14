@@ -4,15 +4,14 @@ import { useParams } from 'react-router-dom';
 
 function PaintingForm ( {onAddPainting} ) {
   
-  const {id} = useParams()
+  const {artist_id} = useParams()
 
   const [paintingFormData, setPaintingFormData] = useState(
     {
       title: "",
       medium: "",  
       year: "",
-      img_link: "",
-      artist_id: id,  
+      img_link: "", 
       famous: false
     }
   ); 
@@ -23,6 +22,8 @@ function PaintingForm ( {onAddPainting} ) {
          ...paintingFormData,
          [id]: value
     }))
+
+    console.log(paintingFormData)
   }
 
   const handleSubmit = (event) => {
@@ -32,15 +33,14 @@ function PaintingForm ( {onAddPainting} ) {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({...paintingFormData})
+    body: JSON.stringify({...paintingFormData, artist_id: artist_id})
     }) .then(response => response.json())
        .then(data => onAddPainting(data))
        .then(() => setPaintingFormData({
         title: "",
         medium: "",  
         year: "",
-        img_link: "",
-        artist_id: id,  
+        img_link: "", 
         famous: false
        }));
     
@@ -59,6 +59,8 @@ function PaintingForm ( {onAddPainting} ) {
           id="title"
           onChange={handleChange}
           />
+          <br></br>
+          <br></br>
           <label htmlFor="medium">medium</label>
            <input 
           type="text" 
@@ -66,6 +68,8 @@ function PaintingForm ( {onAddPainting} ) {
           id="medium"
           onChange={handleChange}
           />
+          <br></br>
+          <br></br>
           <label htmlFor="year">year</label>
            <input 
           type="text" 
@@ -73,6 +77,7 @@ function PaintingForm ( {onAddPainting} ) {
           id="year"
           onChange={handleChange}
           />
+          <br></br>
           <br></br>
           <label htmlFor="img_link">image</label>
           <input 
@@ -82,6 +87,8 @@ function PaintingForm ( {onAddPainting} ) {
           placeholder="url"
           onChange={handleChange}
           />
+          <br></br>
+          <br></br>
           <label htmlFor="famous">is this painting famous?</label>
           <select 
           value={paintingFormData.famous} 
@@ -90,6 +97,7 @@ function PaintingForm ( {onAddPainting} ) {
             <option>true</option>
             <option>false</option>
           </select>
+          <br></br>
           <br></br>
           <button type="submit">Submit</button>
         </form>

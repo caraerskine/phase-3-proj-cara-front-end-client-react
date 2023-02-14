@@ -9,7 +9,6 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
     const {img_link, title, medium, year, like, artist} = painting
     // debugger
 
-
     const [count, setCount] = useState(1);
   
     function handleDelete(e) {
@@ -22,23 +21,21 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
     function handleLiker(e){
       e.preventDefault(e)
 
-        setCount(count => count +1)
-        const updateLike = like + 1
+        setCount(prevCount => prevCount +1)
        
         fetch(`http://localhost:9292/paintings/${painting.id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({like: updateLike}),
+          body: JSON.stringify({like: painting.like +1}),
         })
           .then((response) => response.json())
           .then((updatedPainting) => {
             handleLikePainting(updatedPainting)
           })
       }
-//
-      // {like: painting.like +1} was in stringify ()
+
     return (
         <Card sx={{ maxWidth: 500 }}>
             <CardMedia
@@ -52,7 +49,7 @@ function PaintingCard ( {painting, onDelete, handleLikePainting} ) {
                   {title}
                 </Typography>
                 <Typography>
-                {medium}, {year}
+                {medium}, {year} 
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {} {}

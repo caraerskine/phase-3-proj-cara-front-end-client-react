@@ -59,6 +59,8 @@ function ArtistForm( {onAddArtist} ) {
               id="first_name"
               onChange={handleChange}
               />
+              <br></br>
+              <br></br>
               <label htmlFor="last_name">last name</label>
                <input 
               type="text" 
@@ -66,6 +68,7 @@ function ArtistForm( {onAddArtist} ) {
               id="last_name"
               onChange={handleChange}
               />
+              <br></br>
               <br></br>
               <label htmlFor="img_link">picture of the artist</label>
               <input 
@@ -75,6 +78,8 @@ function ArtistForm( {onAddArtist} ) {
               placeholder="url"
               onChange={handleChange}
               />
+              <br></br>
+              <br></br>
               <label htmlFor="living">is this artist living?</label>
               <select 
               value={artistFormData.living} 
@@ -83,6 +88,7 @@ function ArtistForm( {onAddArtist} ) {
                 <option>true</option>
                 <option>false</option>
               </select>
+              <br></br>
               <br></br>
               <button type="submit">Submit</button>
             </form>
