@@ -9,7 +9,28 @@ You can see the artists already in the collection. You can view their paintings,
 well as all the paintings in the collection. You can add an artist to the collection, 
 and add paintings to any of the artists. You can like a painting, and delete one you don't like!
 
+Goals achieved:
 
-This is great for anyone who is starting an art collection or is a fan of art.
+READ 
+-Display data of artists
+-Display data of paintings 
+
+CREATE
+-Allow users to create a new artist
+-Allow users to add a new painting to any artist
+
+UPDATE
+-Allow users to “like” a painting
+
+DELETE
+-Allow users to delete a painting
+
+URL of repo
+https://github.com/caraerskine/phase-3-proj-cara-front-end-client-react.git
+
+How to run it
+    You need React to run it
+    Run npm install and npm run server
+    Open a second terminal window and run npm start
 
 Happy art collecting!
