@@ -33,9 +33,12 @@ https://github.com/caraerskine/phase-3-proj-cara-front-end-client-react.git
 
 How to run it:
 -You must have the backend running to make this project 
-work. In the Ruby app, run rake server. 
+work. In the console, run rake server from within the directory 
+phase-3-proj-cara-back-end-server
     
--You need React to run the front end
+-You need React to run the front end from
+within the directory
+phase-3-proj-cara-front-end-client-react % cd my-front-end
 Run npm install and npm run server
 Open a second terminal window and run npm start
    
