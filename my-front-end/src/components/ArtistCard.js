@@ -43,7 +43,7 @@ function ArtistCard( {artist} ) {
         </Button>
 
         <Button
-          onClick={() => navigate(`${artist.id}/artists/new`)}
+          onClick={() => navigate(`/artists/new`)}
           size="small"
         >
           Add A New Artist👨‍🎨

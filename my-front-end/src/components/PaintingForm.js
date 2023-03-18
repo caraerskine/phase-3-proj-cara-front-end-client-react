@@ -47,7 +47,7 @@ function PaintingForm ( {onAddPainting} ) {
         console.log(onAddPainting)
       }
 
-
+    
   return (
     <div className="painting-form">
       <h2>Add A New Painting</h2>

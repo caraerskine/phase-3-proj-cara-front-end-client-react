@@ -104,7 +104,7 @@ function App() {
 
             <Route path="/artists/:artist_id/paintings/new" element={<PaintingForm onAddPainting={onAddPainting} />} />
 
-            <Route path="/artists/:artist_id/artists/new" element={<ArtistForm onAddArtist={onAddArtist} />} />
+            <Route path="/artists/new" element={<ArtistForm onAddArtist={onAddArtist} />} />
 
           </Routes>
         </div>
